@@ -15,5 +15,9 @@ def login():
 def registro():
     return render_template('registro.html')
 
+@app.route('/maestro')
+def maestro():
+    return render_template('maestro.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
