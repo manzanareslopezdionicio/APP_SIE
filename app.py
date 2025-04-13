@@ -19,5 +19,17 @@ def registro():
 def maestro():
     return render_template('maestro.html')
 
+@app.route('/estudiante')
+def estudiante():
+    return render_template('estudiante.html')
+
+@app.route('/componente')
+def componente():
+    return render_template('componente.html')
+
+@app.route('/carrera')
+def carrera():
+    return render_template('carrera.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
