@@ -1,10 +1,9 @@
 {% extends 'basetodo.html' %}
-
+{% block titulo %}Login{% endblock %}
 
 <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
-
 
 {% block body %}
 <link rel="stylesheet" href="{{url_for('static', filename='/css/estilos.css')}}">
@@ -35,9 +34,9 @@
                 </div>
                 <div class="form-floating">
                     <input type="password" class="form-control" name="password" id="password" value=""
-                      placeholder="Password" required>
+                        placeholder="Password" required>
                     <label for="password" class="form-label">Contraseña</label>
-                  </div>
+                </div>
                 <button class="btn btn-primary">Entrar</button>
 
             </form>
@@ -46,8 +45,7 @@
             <form action="" class="formulario__register">
                 <h2>Regístrarse</h2>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="name"
-                        placeholder="Nombre y apellidos" required>
+                    <input type="text" class="form-control" id="name" placeholder="Nombre y apellidos" required>
                     <label for="name" class="form-label">Nombre completo</label>
                 </div>
                 <div class="form-floating">
@@ -56,16 +54,15 @@
                     <label for="email" class="form-label">Correo electrónico</label>
                 </div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="name"
-                        placeholder="Nombre y apellidos" required>
+                    <input type="text" class="form-control" id="name" placeholder="Nombre y apellidos" required>
                     <label for="name" class="form-label">Usuario</label>
                 </div>
                 <div class="form-floating">
                     <input type="password" class="form-control" name="password" id="password" value=""
-                      placeholder="Password" required>
+                        placeholder="Password" required>
                     <label for="password" class="form-label">Contraseña</label>
-                  </div>
-                
+                </div>
+
                 <button class="btn btn-primary">Regístrarse</button>
 
             </form>
