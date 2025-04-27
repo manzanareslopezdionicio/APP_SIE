@@ -9,7 +9,7 @@ def principal():
 
 @app.route('/')
 def login():
-    return render_template('login.html')
+    return render_template('login1.html')
 
 @app.route('/registro')
 def registro():
