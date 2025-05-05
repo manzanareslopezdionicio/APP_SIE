@@ -1,11 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'baseprincipal.html' %}
 
-{% block titulo %} {% endblock %}
+{% block titulo %}Maestro {% endblock %}
 
 {% block body %}
 
-<div class="container py-5">
-
+<div class="container">
     <!-- Button trigger modal -->
     <button type="button" class="mt-5 mx-5 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Agregar Maestro
@@ -31,7 +30,9 @@
         </div>
     </div>
     <!--Tabla listado de maestros-->
-    <table class="table  table-hover mt-3">
+    <div class="mt-3">
+    
+    <table class="table table-hover mt-3">
         <thead class="table-primary">
             <tr>
                 <th>#</th>
@@ -53,5 +54,6 @@
             </td>
         </tbody>
     </table>
+</div>
 </div>
 {% endblock %}
