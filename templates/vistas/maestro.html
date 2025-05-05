@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Maestros {% endblock %}
+
+{% block contenido %}
+
+<!-- Modal -->
+
+<div class="card">
+  <div class="card-header">
+    <H1>Sistema de Investigación e Innovación</H1>
+    <h3>CUR - Chontales</h3>
+  </div>
+  <div class="card-body">
+    <!-- Boton ventana modal alineado a la derecha -->
+    <div class="d-flex align-items-center">
+      <button type="button" class="btn btn-primary btn-round ms-auto" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
+        <i class="fa fa-plus"></i>
+        MAESTROS
+      </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Agregar datos del Maestro</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+            <form id="formMaestro" action="">
+              <div class="row">
+                <div class="form-row col-md-6 ">
+                  <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="cedulaid" name="cedula" placeholder="" 
+                      autofocus />
+                    <label for="floatingInput">Cédula</label>
+                  </div>
+                </div>
+                <div class="form-row col-md-6 ">
+                  <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="inss" name="inss" placeholder="" required />
+                    <label for="floatingInput">Número INSS</label>
+                  </div>
+                </div>
+                <div class="form-row col-md-6">
+                  <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" required />
+                    <label for="floatingInput">Nombres</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="apellido" placeholder="" name="apellido" required />
+                    <label for="floatingInput">Apellidos</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="orcid" placeholder="" name="orcid" required />
+                    <label for="floatingInput">Número de ORCID</label>
+                  </div>
+                </div>
+                <div class="form-row col-md-6 ">
+                  <div class="form-floating form-floating-custom mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="" name="email" required />
+                    <label for="floatingInput">Correo Electrónico</label>
+                  </div>
+                </div>
+                <div class="form-row col-md-6 ">
+                  <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="tel" placeholder="" name="tel" required />
+                    <label for="floatingInput">Teléfono</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationCustom04" class="form-label">Area del Conocimiento</label>
+                  <select class="form-select form-control" id="areaC" required>
+                    <option selected disabled value="">Elegir...</option>
+                    <option>Ciencias Tecnologia y Salud</option>
+                    <option>Ciencias Económicas y Administrativa</option>
+                    <option>Educación y Humanidades</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Seleccione una area válido
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationCustom04" class="form-label">Nivel Académico</label>
+                  <select class="form-select" id="nivelA" required>
+                    <option selected disabled value="">Elegir...</option>
+                    <option>Licenciado(a)</option>
+                    <option>Especialista</option>
+                    <option>Master</option>
+                    <option>Doctor(a)</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Seleccione el nivel válido
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="lineaI" placeholder="" name="lineaI" required />
+                    <label for="floatingInput">Línea de Investigación</label>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary btn-round">Guardar</button>
+            <button type="button" class="btn btn-danger btn-round" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Registro de Maestros</h4>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table id="example" class="display table table-striped table-hover ">
+        <thead>
+          <tr>
+            <th>Cédula</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Correo Electrónico</th>
+            <th>Area-Conocimiento</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011/04/25</td>
+            <td>$320,800</td>
+          </tr>
+          <tr>
+            <td>Garrett Winters</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td>63</td>
+            <td>2011/07/25</td>
+            <td>$170,750</td>
+          </tr>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
