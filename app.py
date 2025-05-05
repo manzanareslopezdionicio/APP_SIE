@@ -3,9 +3,8 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def principal():
-    return render_template('index.html')
-
+def inicio():
+    return render_template('inicio.html')
 
 @app.route('/login')
 def login():
@@ -15,7 +14,7 @@ def login():
 def registro():
     return render_template('registro.html')
 
-@app.route('/maestro')
+@app.route('/vistas/maestro')
 def maestro():
     return render_template('maestro.html')
 
