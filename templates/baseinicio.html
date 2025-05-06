@@ -44,7 +44,7 @@
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
           <a href="{{url_for('inicio')}}" class="logo">
-            <img src="{{url_for('static', filename='img/logo_light1.png')}}" alt="navbar brand" class="navbar-brand"
+            <img src="{{url_for('static', filename='img/logo_sie1.png')}}" alt="navbar brand" class="navbar-brand"
               height="20" />
           </a>
           <div class="nav-toggle">
@@ -99,63 +99,40 @@
                       <span class="sub-item">Carrera</span>
                     </a>
                   </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a data-bs-toggle="collapse" href="#sidebarLayouts">
-                <i class="fas fa-th-list"></i>
-                <p>Fichas</p>
-                <span class="caret"></span>
-              </a>
-              <div class="collapse" id="sidebarLayouts">
-                <ul class="nav nav-collapse">
                   <li>
-                    <a href="#">
-                      <span class="sub-item">Inscripción</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span class="sub-item">Evaluación</span>
+                    <a href="{{url_for('componente')}}">
+                      <span class="sub-item">Componentes</span>
                     </a>
                   </li>
                 </ul>
               </div>
             </li>
+            
+
             <li class="nav-item">
               <a data-bs-toggle="collapse" href="#forms">
                 <i class="fas fa-pen-square"></i>
-                <p>Reporte</p>
+                <p>Elementos</p>
                 <span class="caret"></span>
               </a>
               <div class="collapse" id="forms">
                 <ul class="nav nav-collapse">
                   <li>
                     <a href="#">
-                      <span class="sub-item">Inscripción</span>
+                      <span class="sub-item">Competencias</span>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <span class="sub-item">Estudiantes por actividad</span>
+                      <span class="sub-item">Indicadores</span>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <span class="sub-item">Maestros-Jurado</span>
+                      <span class="sub-item">Niveles</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="#">
-                      <span class="sub-item">Ganadores</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span class="sub-item">Asistencia a eventos</span>
-                    </a>
-                  </li>
+ 
                 </ul>
               </div>
             </li>
@@ -181,26 +158,13 @@
               </div>
             </li>
             <li class="nav-item">
-              <a data-bs-toggle="collapse" href="#charts">
-                <i class="far fa-chart-bar"></i>
-                <p>Charts</p>
-                <span class="caret"></span>
+              <a href="#">
+                <i class="fas fa-tasks"></i>
+                <p>Rubrica</p>
+                <span class="badge badge-secondary"></span>
               </a>
-              <div class="collapse" id="charts">
-                <ul class="nav nav-collapse">
-                  <li>
-                    <a href="charts/charts.html">
-                      <span class="sub-item">Chart Js</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="charts/sparkline.html">
-                      <span class="sub-item">Sparkline</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </li>
+
           </ul>
         </div>
       </div>
@@ -385,8 +349,8 @@
   <!-- Datatables -->
   <script src="{{url_for('static', filename='assets/js/plugin/datatables/datatables.min.js')}}"></script>
 
-  <!-- Bootstrap Notify
-  <script src="{{url_for('static', filename='assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>  -->
+  <!-- Bootstrap Notify-->
+  <script src="{{url_for('static', filename='assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>  
 
   <!-- jQuery Vector Maps -->
   <script src="{{url_for('static', filename='assets/js/plugin/jsvectormap/jsvectormap.min.js')}}"></script>
@@ -401,35 +365,7 @@
   <!-- Kaiadmin DEMO methods, don't include it in your project! -->
   <script src="{{url_for('static', filename='assets/js/setting-demo.js')}}"></script>
   <script src="{{url_for('static', filename='assets/js/demo.js')}}"></script>
-  <script>
-    $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
-      type: "line",
-      height: "70",
-      width: "100%",
-      lineWidth: "2",
-      lineColor: "#177dff",
-      fillColor: "rgba(23, 125, 255, 0.14)",
-    });
-
-    $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
-      type: "line",
-      height: "70",
-      width: "100%",
-      lineWidth: "2",
-      lineColor: "#f3545d",
-      fillColor: "rgba(243, 84, 93, .14)",
-    });
-
-    $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
-      type: "line",
-      height: "70",
-      width: "100%",
-      lineWidth: "2",
-      lineColor: "#ffa534",
-      fillColor: "rgba(255, 165, 52, .14)",
-    });
-  </script>
-
+ 
 <script src="{{url_for('static', filename='js/estilodt.js')}}"></script>
 
 </body>

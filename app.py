@@ -14,17 +14,17 @@ def login():
 def registro():
     return render_template('registro.html')
 
-@app.route('/vistas/maestro')
+@app.route('/maestro')
 def maestro():
-    return render_template('maestro.html')
+    return render_template('/vistas/maestro.html')
 
 @app.route('/estudiante')
 def estudiante():
-    return render_template('estudiante.html')
+    return render_template('/vistas/estudiante.html')
 
 @app.route('/componente')
 def componente():
-    return render_template('componente.html')
+    return render_template('/vistas/componente.html')
 
 @app.route('/carrera')
 def carrera():
