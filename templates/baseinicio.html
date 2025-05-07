@@ -31,6 +31,8 @@
   <link rel="stylesheet" href="{{url_for('static', filename='assets/css/bootstrap.min.css')}}" />
   <link rel="stylesheet" href="{{url_for('static', filename='assets/css/plugins.min.css')}}" />
   <link rel="stylesheet" href="{{url_for('static', filename='assets/css/kaiadmin.min.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/form-elements.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link rel="stylesheet" href="{{url_for('static', filename='assets/css/demo.css')}}" />
@@ -107,7 +109,7 @@
                 </ul>
               </div>
             </li>
-            
+
 
             <li class="nav-item">
               <a data-bs-toggle="collapse" href="#forms">
@@ -132,7 +134,7 @@
                       <span class="sub-item">Niveles</span>
                     </a>
                   </li>
- 
+
                 </ul>
               </div>
             </li>
@@ -158,7 +160,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a href="#">
+              <a href="{{url_for('rubrica')}}">
                 <i class="fas fa-tasks"></i>
                 <p>Rubrica</p>
                 <span class="badge badge-secondary"></span>
@@ -177,7 +179,8 @@
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
             <a href="#" class="logo">
-              <img src="{{url_for('static', filename='assets/img/kaiadmin/logo_light.svg')}}" alt="navbar brand" class="navbar-brand" height="20" />
+              <img src="{{url_for('static', filename='assets/img/kaiadmin/logo_light.svg')}}" alt="navbar brand"
+                class="navbar-brand" height="20" />
             </a>
             <div class="nav-toggle">
               <button class="btn btn-toggle toggle-sidebar">
@@ -198,14 +201,12 @@
           style="background-color: #e3f2fd;">
           <div class="container-fluid">
 
-
             <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
-
-
               <li class="nav-item topbar-user dropdown hidden-caret">
                 <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                   <div class="avatar-sm">
-                    <img src="{{url_for('static', filename='assets/img/profile.jpg')}}" alt="..." class="avatar-img rounded-circle" />
+                    <img src="{{url_for('static', filename='assets/img/profile.jpg')}}" alt="..."
+                      class="avatar-img rounded-circle" />
                   </div>
                   <span class="profile-username">
                     <span class="op-7">Hi,</span>
@@ -217,7 +218,8 @@
                     <li>
                       <div class="user-box">
                         <div class="avatar-lg">
-                          <img src="{{url_for('static', filename='assets/img/profile.jpg')}}" alt="image profile" class="avatar-img rounded" />
+                          <img src="{{url_for('static', filename='assets/img/profile.jpg')}}" alt="image profile"
+                            class="avatar-img rounded" />
                         </div>
                         <div class="u-text">
                           <h4>Hizrian</h4>
@@ -248,9 +250,9 @@
       <div class="container">
         <div class="page-inner">
           <!-- <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"> -->
-            {% block contenido %}
-            
-            {% endblock %}
+          {% block contenido %}
+
+          {% endblock %}
           <!-- </div> -->
         </div>
       </div>
@@ -350,7 +352,7 @@
   <script src="{{url_for('static', filename='assets/js/plugin/datatables/datatables.min.js')}}"></script>
 
   <!-- Bootstrap Notify-->
-  <script src="{{url_for('static', filename='assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>  
+  <script src="{{url_for('static', filename='assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
   <!-- jQuery Vector Maps -->
   <script src="{{url_for('static', filename='assets/js/plugin/jsvectormap/jsvectormap.min.js')}}"></script>
@@ -365,8 +367,15 @@
   <!-- Kaiadmin DEMO methods, don't include it in your project! -->
   <script src="{{url_for('static', filename='assets/js/setting-demo.js')}}"></script>
   <script src="{{url_for('static', filename='assets/js/demo.js')}}"></script>
- 
-<script src="{{url_for('static', filename='js/estilodt.js')}}"></script>
+
+  <script src="{{url_for('static', filename='js/estilodt.js')}}"></script>
+
+  <script src="{{url_for('static', filename='multipaso/assets/js/jquery-1.11.1.min.js')}}"></script>
+    
+  <script src="{{url_for('static', filename='multipaso/assets/js/jquery.backstretch.min.js')}}"></script>
+  <script src="{{url_for('static', filename='multipaso/assets/js/retina-1.1.0.min.js')}}"></script>
+  <script src="{{url_for('static', filename='multipaso/assets/js/scripts.js')}}"></script>
+
 
 </body>
 

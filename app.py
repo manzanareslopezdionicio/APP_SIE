@@ -30,5 +30,9 @@ def componente():
 def carrera():
     return render_template('carrera.html')
 
+@app.route('/rubrica')
+def rubrica():
+    return render_template('/vistas/rubrica.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
