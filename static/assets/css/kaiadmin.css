@@ -2757,7 +2757,7 @@ label {
     opacity: 1;
     padding: .375rem 0 .75rem; }
   .form-floating-custom .form-control:not(:placeholder-shown) + label, .form-floating-custom .form-select:not(:placeholder-shown) + label {
-    color: #1572E8 !important; }
+    color: #005cd5 !important; }
   .form-floating-custom .form-control:not(:placeholder-shown) ~ label::after {
     background: transparent !important; }
   .form-floating-custom .form-control ::-webkit-input-placeholder {
