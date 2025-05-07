@@ -1,105 +1,99 @@
 {% extends 'baseinicio.html' %}
 
-{% block titulo %}
-    Rubrica
-{% endblock  %}
+{% block titulo %} Rubrica{% endblock %}
 
 {% block contenido %}
-    
-    <div class="top-content">
-        <div class="container">
 
-            <div class="row">
-                <div class="">
-                    <form role="form" action="" method="post" class="f1">
+<div class="row g-3">
+    <div class="col">
+        <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+    </div>
+</div>
 
-                        
-                        <!--paso 1 -->
-                        <fieldset>
-                            <legend>Elementos de la competencia</legend>
-                            <div class="form-floating">
-                                <input type="password" class="form-control" name="password" id="password" value=""
-                                  placeholder="Password" required>
-                                <label for="password" class="form-label">Password</label>
-                              </div>
-                            <br>
-                            <div class="form-group">
-                                <label class="sr-only" for="f1-first-name">Nombre del Propietario</label>
-                                <input type="text" name="f1-first-name" placeholder="Propietario"
-                                    class="f1-first-name form-control" id="f1-first-name">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="f1-last-name">Ubicación del Inmueble</label>
-                                <input type="text" name="f1-last-name" placeholder="Ubicación del Inmueble"
-                                    class="f1-last-name form-control" id="f1-last-name">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="f1-about-yourself">Descripción del Inmueble</label>
-                                <textarea name="f1-about-yourself" placeholder="Descripción del Inmueble"
-                                    class="f1-about-yourself form-control" id="f1-about-yourself"></textarea>
-                            </div>
-                            <div class="f1-buttons">
-                                <button type="button" class="btn btn-next">Siguiente</button>
-                            </div>
-                        </fieldset>
-                        <!--fin del paso 1 -->
 
-                        <!---paso 2 -->
-                        <fieldset>
-                            <br>
-                            <div class="form-group">
-                                <label class="sr-only" for="f1-email">Correo del Propietario</label>
-                                <input type="text" name="f1-email" placeholder="Correo del Propietario"
-                                    class="f1-email form-control" id="f1-email">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="f1-password">Ciudad donde está el Inmueble</label>
-                                <input type="password" name="f1-password" placeholder="Valor de Inmueble"
-                                    class="f1-password form-control" id="f1-password">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="f1-repeat-password">Barrio donde está el Inmueble</label>
-                                <input type="password" name="f1-repeat-password"
-                                    placeholder="Barrio donde está el Inmueble" class="f1-repeat-password form-control"
-                                    id="f1-repeat-password">
-                            </div>
-                            <div class="f1-buttons">
-                                <button type="button" class="btn btn-previous">Atrás</button>
-                                <button type="button" class="btn btn-next">Siguiente</button>
-                            </div>
-                        </fieldset>
-                        <!--fin del paso 2 -->
+<div class="row g-3">
 
-                        <!--paso fin -->
-                        <fieldset>
-                            <br>
-                            <div class="form-group">
-                                <label class="sr-only" for="f1-facebook">Valor de Inmueble</label>
-                                <input type="text" name="f1-facebook" placeholder="Valor de Inmueble"
-                                    class="f1-facebook form-control" id="f1-facebook">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="f1-twitter">Porcentaje en Permutas</label>
-                                <input type="text" name="f1-twitter" placeholder="Porcentaje en Permutas"
-                                    class="f1-twitter form-control" id="f1-twitter">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="f1-google-plus">Que te gustaria Intercambiar?</label>
-                                <input type="text" name="f1-google-plus" placeholder="Que te gustaria Intercambiar?"
-                                    class="f1-google-plus form-control" id="f1-google-plus">
-                            </div>
-                            <div class="f1-buttons">
-                                <button type="button" class="btn btn-previous">Atrás</button>
-                                <button type="submit" class="btn btn-submit">Guardar Información</button>
-                            </div>
-                        </fieldset>
-                        <!--fin -->
 
-                    </form>
+    <div class="">
+        <form role="form" action="" method="post" class="f1">
+
+            <!--paso 1 -->
+            <fieldset>
+                <legend>Elementos de la competencia</legend>
+                <br>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault" checked>
+                        <label class="form-check-label" for="checkDefault">
+                            Conceptuales
+                        </label>
+                    </div>
                 </div>
-            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="checkChecked">
+                    <label class="form-check-label" for="checkChecked">
+                        Procedimentales
+                    </label>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkChecked">
+                        <label class="form-check-label" for="checkChecked">
+                            Actitudinal
+                        </label>
+                    </div>
+                </div>
+                <fieldset>
+                    <legend>Agregar los niveles - Evaluación</legend>
+                    <div class="row">
+                        <div class="form-row col-md-6 ">
+                            <div class="form-floating form-floating-custom mb-3">
+                                <input type="text" class="form-control" id="cedulaid" name="cedula" placeholder=""
+                                    autofocus />
+                                <label for="floatingInput">Cédula</label>
+                            </div>
+                        </div>
+                        <div class="form-row col-md-6 ">
+                            <div class="form-floating form-floating-custom mb-3">
+                                <input type="text" class="form-control" id="inss" name="inss" placeholder="" required />
+                                <label for="floatingInput">Número INSS</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-row col-md-6 ">
+                                <div class="form-floating form-floating-custom mb-3">
+                                    <input type="text" class="form-control" id="cedulaid" name="cedula" placeholder=""
+                                        autofocus />
+                                    <label for="floatingInput">Cédula</label>
+                                </div>
+                            </div>
+                            <div class="form-row col-md-6 ">
+                                <div class="form-floating form-floating-custom mb-3">
+                                    <input type="text" class="form-control" id="inss" name="inss" placeholder=""
+                                        required />
+                                    <label for="floatingInput">Número INSS</label>
+                                </div>
+                            </div>
 
-        </div>
+
+                </fieldset>
+
+
+                <div class="">
+
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </fieldset>
+            <!--fin -->
+
+        </form>
     </div>
 
-        {% endblock  %}
+
+
+</div>
+
+{% endblock %}
