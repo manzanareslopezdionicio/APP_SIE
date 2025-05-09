@@ -30,9 +30,9 @@ def componente():
 def carrera():
     return render_template('carrera.html')
 
-@app.route('/rubricaNivel')
-def rubricaNivel():
-    return render_template('/vistas/rubricaNivel.html')
+@app.route('/rubrica')
+def rubrica():
+    return render_template('/vistas/rubrica.html')
 
 @app.route("/grupo")
 def grupo():

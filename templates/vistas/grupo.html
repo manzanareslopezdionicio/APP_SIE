@@ -5,13 +5,19 @@
 {% block contenido %}
 <input type="checkbox" id="myCheckbox"> Mostrar textbox
 <input type="text" id="myTextbox" style="display: none;">
+<label for="myCheckbox" id="mylabel1" style="display: none;">Nombre</label>
+<input type="text" id="nivel1" style="display: none;">
 
 <script>
 const checkbox = document.getElementById("myCheckbox");
 const textbox = document.getElementById("myTextbox");
+const textbox1 = document.getElementById("nivel1")
+const label1 = document.getElementById("mylabel1")
 
 checkbox.addEventListener("change", () => {
     textbox.style.display = checkbox.checked ? "block" : "none";
+    textbox1.style.display = checkbox.checked ? "block" : "none";
+    label1.style.display = checkbox.checked ? "block" : "none";
 });
 </script>
 
