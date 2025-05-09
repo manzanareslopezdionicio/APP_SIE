@@ -29,14 +29,14 @@ def componente():
 @app.route('/carrera')
 def carrera():
     return render_template('carrera.html')
-"""
-@app.route('/rubrica')
-def rubrica():
-    return render_template('/vistas/rubrica.html')
-"""
+
 @app.route('/rubricaNivel')
 def rubricaNivel():
     return render_template('/vistas/rubricaNivel.html')
+
+@app.route("/grupo")
+def grupo():
+    return render_template("/vistas/grupo.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
