@@ -3,6 +3,18 @@
 {% block titulo %} Grupo{% endblock %}
 
 {% block contenido %}
+<input type="checkbox" id="myCheckbox"> Mostrar textbox
+<input type="text" id="myTextbox" style="display: none;">
+
+<script>
+const checkbox = document.getElementById("myCheckbox");
+const textbox = document.getElementById("myTextbox");
+
+checkbox.addEventListener("change", () => {
+    textbox.style.display = checkbox.checked ? "block" : "none";
+});
+</script>
+
 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
     tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
