@@ -4,15 +4,25 @@
 {% block contenido %}
 
 <form role="form" action="" method="post" class="">
+    <div class="mb-3">
+        <label for="" class="form-label">Componetes</label>
+        <select class="form-select form-select-lg" name="" id="">
+            <option selected>Seleccionar uno</option>
+            <option value="">New Delhi</option>
+            <option value="">Istanbul</option>
+            <option value="">Jakarta</option>
+        </select>
+    </div>
     <!--Form1 conceptual-->
     <div class="col">
 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="concepto" checked> Cenceptuales
+            <input class="form-check-input" type="checkbox" value="" id="concepto" checked> 
+            <label class="form-check-label" for="concepto">Cenceptuales</label>
         </div>
 
         <fieldset class="form1 shadow p-3 mb-5 bg-body-tertiary rounded">
-            <legend >Agregar la descripción de niveles - Evaluación</legend>
+            <legend>Agregar la descripción de niveles - Evaluación</legend>
             <hr>
             <div class="form-row col-md-12">
                 <div class="form-floating form-floating-custom mb-3">
@@ -50,7 +60,8 @@
         </fieldset>
 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="proceso"> Procedimentales
+            <input class="form-check-input" type="checkbox" value="" id="proceso"> 
+            <label class="form-check-label" for="proceso">Procedimentales</label>
         </div>
 
         <!--Form2 procedimental-->
@@ -97,7 +108,8 @@
         </fieldset>
 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="actitud"> Actitudinales
+            <input class="form-check-input" type="checkbox" value="" id="actitud"> 
+            <label class="form-check-label" for="actitud">Actitudinales</label>
         </div>
 
         <!--Form3 Actitudinal-->
