@@ -3,14 +3,11 @@
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css')}}">
 {% block contenido %}
 
-
-
 <form role="form" action="" method="post" class="row">
-    <!--paso 1 -->
-     <!--Form1-->
+    <!--Form1-->
     <div class="col">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="checkbox1"> Cenceptuales
+            <input class="form-check-input" type="checkbox" value="" id="checkbox1" checked> Cenceptuales
         </div>
     </div>
     <fieldset class="form1 shadow p-3 mb-5 bg-body-tertiary rounded">
@@ -18,37 +15,32 @@
         <hr>
         <div class="form-row col-md-12 ">
             <div class="form-floating form-floating-custom mb-3">
-                <input type="text" class="form-control" id="logro1"  name="logro1" placeholder=""
-                    required autofocus />
-                <label for="floatingInput" >Indicador de Logro</label>
+                <input type="text" class="form-control" id="logro1" name="logro1" placeholder="" required autofocus />
+                <label for="floatingInput">Indicador de Logro</label>
             </div>
         </div>
         <div class="row g-3">
             <div class="col-md-6">
                 <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel5" name="nivel5" 
-                        placeholder="" required />
-                    <label for="floatingInput" id="label5" >Nivel 5</label>
+                    <input type="text" class="form-control" id="nivel5" name="nivel5" placeholder="" required />
+                    <label for="floatingInput" id="label5">Nivel 5</label>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel4" name="nivel4" 
-                        placeholder="" autofocus />
-                    <label for="floatingInput" id="label4" >Nivel 4</label>
+                    <input type="text" class="form-control" id="nivel4" name="nivel4" placeholder="" autofocus />
+                    <label for="floatingInput" id="label4">Nivel 4</label>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel3"  name="nivel3"
-                        placeholder="" autofocus />
+                    <input type="text" class="form-control" id="nivel3" name="nivel3" placeholder="" autofocus />
                     <label for="floatingInput" id="label3">Nivel 3</label>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel2" name="nivel2"
-                        placeholder="" autofocus />
+                    <input type="text" class="form-control" id="nivel2" name="nivel2" placeholder="" autofocus />
                     <label for="floatingInput" id="label2">Nivel 2</label>
                 </div>
             </div>
@@ -177,7 +169,7 @@
         textbox5.style.display = checkbox1.checked ? "block" : "none";
         label5.style.display = checkbox1.checked ? "block" : "none";
         textbox4.style.display = checkbox.checked ? "block" : "none";
-         
+
         textbox3.style.display = checkbox.checked ? "block" : "none";
         textbox2.style.display = checkbox.checked ? "block" : "none";
         leyenda1.style.display = checkbox.checked ? "block" : "none";
