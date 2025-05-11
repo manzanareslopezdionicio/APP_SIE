@@ -3,24 +3,19 @@
 {% block titulo %} Grupo{% endblock %}
 
 {% block contenido %}
-<input type="checkbox" id="myCheckbox"> Mostrar textbox
-<input type="text" id="myTextbox" style="display: none;">
-<label for="myCheckbox" id="mylabel1" style="display: none;">Nombre</label>
-<input type="text" id="nivel1" style="display: none;">
 
-<script>
-const checkbox = document.getElementById("myCheckbox");
-const textbox = document.getElementById("myTextbox");
-const textbox1 = document.getElementById("nivel1")
-const label1 = document.getElementById("mylabel1")
 
-checkbox.addEventListener("change", () => {
-    textbox.style.display = checkbox.checked ? "block" : "none";
-    textbox1.style.display = checkbox.checked ? "block" : "none";
-    label1.style.display = checkbox.checked ? "block" : "none";
-});
-</script>
 
+<input type="checkbox" id="miCheckbox"> Marcar para mostrar el textbox
+
+
+<input class="form-control" type="text" id="nivel1" style="display: none;">
+<div class="form-floating mb-1">
+    <input type="text" class="form-control" id="nivel5" placeholder="" aria-label="" style="display: none;">
+    <label for="label5" id="label5" style="display: none;">Nivel 5</label>
+</div>
+
+<!-- El textbox inicialmente está oculto -->
 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
     tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
@@ -32,10 +27,10 @@ checkbox.addEventListener("change", () => {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-             <div class="form-floating">
-                <input type="text" class="form-control" id="nombre" placeholder="">
-                <label for="nombre">Nombres</label>
-             </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="nombre" placeholder="">
+                    <label for="nombre">Nombres</label>
+                </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
@@ -80,14 +75,14 @@ checkbox.addEventListener("change", () => {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-             <input type="button" value="" class="form-control" placeholder="Nombre" required>
+                <input type="button" value="" class="form-control" placeholder="Nombre" required>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
                     Atras
                 </button>
                 <button type="submit" class="btn btn-primary">siguiente</button>
-                
+
             </div>
         </div>
     </div>
@@ -128,4 +123,5 @@ checkbox.addEventListener("change", () => {
     </div>
 
 </fieldset>
+
 {% endblock %}

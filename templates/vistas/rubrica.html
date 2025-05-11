@@ -4,177 +4,149 @@
 {% block contenido %}
 
 <form role="form" action="" method="post" class="row">
-    <!--Form1-->
+    <!--Form1 conceptual-->
     <div class="col">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="checkbox1" checked> Cenceptuales
+            <input class="form-check-input" type="checkbox" value="" id="concepto" checked> Cenceptuales
         </div>
-    </div>
-    <fieldset class="form1 shadow p-3 mb-5 bg-body-tertiary rounded">
-        <legend id="leyenda1">Agregar la descripción de niveles - Evaluación</legend>
-        <hr>
-        <div class="form-row col-md-12 ">
-            <div class="form-floating form-floating-custom mb-3">
-                <input type="text" class="form-control" id="logro1" name="logro1" placeholder="" required autofocus />
-                <label for="floatingInput">Indicador de Logro</label>
+        <fieldset class="form1 shadow p-3 mb-5 bg-body-tertiary rounded">
+            <legend id="leyenda1" style="display: none;">Agregar la descripción de niveles - Evaluación</legend>
+            <hr>
+            <div class="form-row col-md-12">
+                <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="logro1" name="logro1" style="display: none;"
+                        placeholder="" required />
+                    <label for="floatingInput" id="labellogro" style="display: none;">Indicador de Logro</label>
+                </div>
             </div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel5" style="display: none;" name="nivel5"
+                            placeholder="" required />
+                        <label for="floatingInput" id="label5" style="display: none;">Nivel 5</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel4" style="display: none;" name="nivel4"
+                            placeholder="" autofocus />
+                        <label for="floatingInput" id="label4" style="display: none;">Nivel 4</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel3" style="display: none;" name="nivel3"
+                            placeholder="" autofocus />
+                        <label for="floatingInput" id="label3" style="display: none;">Nivel 3</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel2" style="display: none;" name="nivel2"
+                            placeholder="" autofocus />
+                        <label for="floatingInput" id="label2" style="display: none;">Nivel 2</label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+      
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="proceso">
+                <label class="form-check-label" for="checkChecked">Procedimentales</label>
+            </div>
+  
+        <!--Form2 procedimental-->
+        <fieldset class="form2 shadow p-3 mb-5 bg-body-tertiary rounded">
+            <legend style="display: none;">Agregar la descripción de niveles - Evaluación</legend>
+            <hr>
+            <div class="form-row col-md-12 ">
+                <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="logro2" style="display: none;" name="logro"
+                        placeholder="" required autofocus />
+                    <label for="floatingInput" style="display: none;" id="labellogro2">Indicador de Logro</label>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel55" style="display: none;" name="nivel5"
+                            placeholder="" required />
+                        <label for="floatingInput" id="label55" style="display: none;">Nivel 5</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel44" style="display: none;" name="nivel4"
+                            placeholder="" autofocus />
+                        <label for="floatingInput" style="display: none;" id="label44">Nivel 4</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel33" style="display: none;" name="nivel3"
+                            placeholder="" autofocus />
+                        <label for="floatingInput" style="display: none;" id="label33">Nivel 3</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel22" style="display: none;" name="nivel2"
+                            placeholder="" autofocus />
+                        <label for="floatingInput" style="display: none;" id="label22">Nivel 2</label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <!--Form3 Actitudinal-->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="Actitud">
+            <label class="form-check-label" for="checkDefault">Actitudinales</label>
         </div>
-        <div class="row g-3">
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel5" name="nivel5" placeholder="" required />
-                    <label for="floatingInput" id="label5">Nivel 5</label>
+        <fieldset class="form3 shadow p-3 mb-5 bg-body-tertiary rounded">
+            <legend style="display: none;">Agregar la descripción de niveles - Evaluación</legend>
+            <hr>
+            <div class="form-row col-md-12 ">
+                <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="logro3" style="display: none;" name="logro3" placeholder="" required autofocus />
+                    <label for="floatingInput" id="labellogro3" style="display: none;">Indicador de Logro</label>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel4" name="nivel4" placeholder="" autofocus />
-                    <label for="floatingInput" id="label4">Nivel 4</label>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel555" style="display: none;" name="nivel5" placeholder="" required />
+                        <label for="floatingInput" id="label555" style="display: none;">Nivel 5</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel444" style="display: none;" name="nivel4" placeholder="" autofocus />
+                        <label for="floatingInput" id="label444" style="display: none;">Nivel 4</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel333" style="display: none;" name="nivel3" placeholder="" autofocus />
+                        <label for="floatingInput" id="label333" style="display: none;">Nivel 3</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating form-floating-custom">
+                        <input type="text" class="form-control" id="nivel222" style="display: none;" name="nivel222" placeholder="" autofocus />
+                        <label for="floatingInput" id="label222" style="display: none;">Nivel 2</label>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel3" name="nivel3" placeholder="" autofocus />
-                    <label for="floatingInput" id="label3">Nivel 3</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel2" name="nivel2" placeholder="" autofocus />
-                    <label for="floatingInput" id="label2">Nivel 2</label>
-                </div>
-            </div>
-        </div>
-    </fieldset>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="checkChecked">
-        <label class="form-check-label" for="checkChecked">Procedimentales</label>
-    </div>
-    <!--Form2-->
-    <fieldset class="form2 shadow p-3 mb-5 bg-body-tertiary rounded">
-        <legend>Agregar la descripción de niveles - Evaluación</legend>
-        <hr>
-        <div class="form-row col-md-12 ">
-            <div class="form-floating form-floating-custom mb-3">
-                <input type="text" class="form-control" id="logro" name="logro" placeholder="" required autofocus />
-                <label for="floatingInput">Indicador de Logro</label>
-            </div>
-        </div>
-        <div class="row g-3">
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel5" name="nivel5" placeholder="" required />
-                    <label for="floatingInput">Nivel 5</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel4" name="nivel4" placeholder="" autofocus />
-                    <label for="floatingInput">Nivel 4</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel3" name="nivel3" placeholder="" autofocus />
-                    <label for="floatingInput">Nivel 3</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel2" name="nivel2" placeholder="" autofocus />
-                    <label for="floatingInput">Nivel 2</label>
-                </div>
-            </div>
-        </div>
-    </fieldset>
-    <!--Form3-->
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-        <label class="form-check-label" for="checkDefault">Actitudinales</label>
-    </div>
-    <fieldset class="form3 shadow p-3 mb-5 bg-body-tertiary rounded">
-        <legend>Agregar la descripción de niveles - Evaluación</legend>
-        <hr>
-        <div class="form-row col-md-12 ">
-            <div class="form-floating form-floating-custom mb-3">
-                <input type="text" class="form-control" id="logro" name="logro" placeholder="" required autofocus />
-                <label for="floatingInput">Indicador de Logro</label>
-            </div>
-        </div>
-        <div class="row g-3">
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel5" name="nivel5" placeholder="" required />
-                    <label for="floatingInput">Nivel 5</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel4" name="nivel4" placeholder="" autofocus />
-                    <label for="floatingInput">Nivel 4</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel3" name="nivel3" placeholder="" autofocus />
-                    <label for="floatingInput">Nivel 3</label>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-floating form-floating-custom">
-                    <input type="text" class="form-control" id="nivel2" name="nivel2" placeholder="" autofocus />
-                    <label for="floatingInput">Nivel 2</label>
-                </div>
-            </div>
-        </div>
 
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
-            <button type="submit" class="btn btn-primary btn-round mt-4">Guardar</button>
-        </div>
-    </fieldset>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
+                <button type="submit" class="btn btn-primary btn-round mt-4">Guardar</button>
+            </div>
+        </fieldset>
+    </div>
 </form>
 
 
-
 <script type="text/javascript" src="{{url_for('static', filename='js/scripts.js')}}"></script>
-<script>
-    const checkbox = document.getElementById("myCheckbox");
-    const textbox = document.getElementById("myTextbox");
-    const textbox1 = document.getElementById("nivel1")
-    const label1 = document.getElementById("mylabel1")
-
-    checkbox.addEventListener("change", () => {
-        textbox.style.display = checkbox.checked ? "block" : "none";
-        textbox1.style.display = checkbox.checked ? "block" : "none";
-        label1.style.display = checkbox.checked ? "block" : "none";
-    });
-</script>
-
-<script>
-    const checkbox1 = document.getElementById("Checkbox1");
-    const textbox11 = document.getElementById("logo1");
-    const textbox5 = document.getElementById("nivel5")
-    const label5 = document.getElementById("label5")
-    const textbox4 = document.getElementById("nivel4")
-    const label4 = document.getElementById("label4")
-    const textbox3 = document.getElementById("nivel3")
-    const label3 = document.getElementById("label3")
-    const textbox2 = document.getElementById("nivel2")
-    const label2 = document.getElementById("label2")
-    const leyenda1 = document.getElementById("leyeda1")
-
-
-    checkbox1.addEventListener("change", () => {
-        textbox11.style.display = checkbox1.checked ? "block" : "none";
-        textbox5.style.display = checkbox1.checked ? "block" : "none";
-        label5.style.display = checkbox1.checked ? "block" : "none";
-        textbox4.style.display = checkbox.checked ? "block" : "none";
-
-        textbox3.style.display = checkbox.checked ? "block" : "none";
-        textbox2.style.display = checkbox.checked ? "block" : "none";
-        leyenda1.style.display = checkbox.checked ? "block" : "none";
-    });
-</script>
-
 
 {% endblock %}

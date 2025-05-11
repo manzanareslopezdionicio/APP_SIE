@@ -251,14 +251,12 @@ const formMaestro = document.getElementById('formMaestro')
 const cedulaid = document.querySelector('cedulaid')
 const tel = document.getElementById('tel')
 
-(function () {
-  formMaestro.addEventListener('submit', function (e) {
-    let telef = String(tel.value).trim()
-    if (telef.length == 0) {
-      alert("cedula")
-      e.preventDefault()
-    }
-  })
-})()
-
-
+  (function () {
+    formMaestro.addEventListener('submit', function (e) {
+      let telef = String(tel.value).trim()
+      if (telef.length == 0) {
+        alert("cedula")
+        e.preventDefault()
+      }
+    })
+  })()
