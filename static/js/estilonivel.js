@@ -123,3 +123,4 @@ actitud.addEventListener('change', function () {
         leyenda3.style.display = 'none';
     }
 });
+
