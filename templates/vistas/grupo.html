@@ -1,93 +1,117 @@
 {% extends 'baseinicio.html' %}
-
 {% block titulo %} Grupo{% endblock %}
-
 {% block contenido %}
 
-
-
-<input type="checkbox" id="miCheckbox"> Marcar para mostrar el textbox
-
-
-<input class="form-control" type="text" id="nivel1" style="display: none;">
-<div class="form-floating mb-1">
-    <input type="text" class="form-control" id="nivel5" placeholder="" aria-label="" style="display: none;">
-    <label for="label5" id="label5" style="display: none;">Nivel 5</label>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Registro de grupos</h5>
+        <div class=" d-flex">
+            <!-- Modal trigger button -->
+            <button type="button" class="btn btn-primary btn-lg btn-round ms-auto shadow" data-bs-toggle="modal"
+                data-bs-target="#modalId">
+                <i class="fa fa-user-plus"></i>
+                Agregar
+            </button>
+        </div>
+    </div>
 </div>
 
-<!-- El textbox inicialmente está oculto -->
-<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
-    tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
+<!-- Modal Body -->
+<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+    aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalToggleLabel">
-                    Registro de Niveles y descripciones
+                <h5 class="modal-title" id="modalTitleId">
+                    Grupos de Trabajos
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="nombre" placeholder="">
-                    <label for="nombre">Nombres</label>
-                </div>
+                <form id="formMaestro" action="">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="estudiante" class="form-label">Nombre estudiante</label>
+                            <select class="form-select form-control" id="estudiante" required>
+                                <option selected disabled value="">Elegir...</option>
+                                <option>...</option>
+                                <option>...</option>
+                                <option>...</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Seleccione un nombre estudiante válido
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="grupo" class="form-label">Grupo</label>
+                            <select class="form-select form-control" id="grupo" required>
+                                <option selected disabled value="">Elegir...</option>
+                                <option>...</option>
+                                <option>...</option>
+                                <option>...</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Seleccione un grupo válido
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-row col-md-6">
+                            <div class="form-floating form-floating-custom mb-3">
+                                <input type="text" class="form-control" id="nombre" placeholder="" name="nombre"
+                                    required />
+                                <label for="floatingInput">Nombres</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating form-floating-custom mb-3">
+                                <input type="text" class="form-control" id="apellido" placeholder="" name="apellido"
+                                    required />
+                                <label for="floatingInput">Apellidos</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating form-floating-custom mb-3">
+                                <input type="text" class="form-control" id="orcid" placeholder="" name="orcid"
+                                    required />
+                                <label for="floatingInput">Número de ORCID</label>
+                            </div>
+                        </div>
+                        <div class="form-row col-md-6 ">
+                            <div class="form-floating form-floating-custom mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="" name="email"
+                                    required />
+                                <label for="floatingInput">Correo Electrónico</label>
+                            </div>
+                        </div>
+                        <div class="form-row col-md-6 ">
+                            <div class="form-floating form-floating-custom mb-3">
+                                <input type="text" class="form-control" id="tel" placeholder="" name="tel" required />
+                                <label for="floatingInput">Teléfono</label>
+                            </div>
+                        </div>
+                    </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
-                    Siguiente
-                </button>
+                <button type="button" class="btn btn-outline-danger btn-round" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary btn-round">Guardar...</button>
             </div>
+            </form>
         </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
-    tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalToggleLabel2">
-                    Modal 2
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                procesos
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secundary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
-                    Atras
-                </button>
-                <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">
-                    Siguiente
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
-    tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalToggleLabel">
-                    Modal 3
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input type="button" value="" class="form-control" placeholder="Nombre" required>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
-                    Atras
-                </button>
-                <button type="submit" class="btn btn-primary">siguiente</button>
 
-            </div>
-        </div>
     </div>
 </div>
-<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Niveles</a>
+</div>
+
+<!-- Optional: Place to the bottom of scripts -->
+<script>
+    const myModal = new bootstrap.Modal(
+        document.getElementById("modalId"),
+        options,
+    );
+</script>
+
 
 <fieldset>
     <legend class="text-center ">Registro de grupo de trabajo</legend>
