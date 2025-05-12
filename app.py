@@ -28,7 +28,7 @@ def componente():
 
 @app.route('/carrera')
 def carrera():
-    return render_template('carrera.html')
+    return render_template('/carrera.html')
 
 @app.route('/rubrica')
 def rubrica():
