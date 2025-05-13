@@ -1,6 +1,39 @@
 {% extends 'baseinicio.html' %}
-{% block titulo %} SIE {% endblock  %}
+{% block titulo %} SIE {% endblock %}
 {% block contenido %}
+<!--Tabla de rubrica-->
+<label for="form-label">Rubrica: </label>
 
-<h1>Bienvenidos </h1>
-{% endblock  %}
+<div class="table-responsive">
+    <table class="table table-hover table-borderless lign-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Componente</th>
+                <th>Elemento del Componente</th>
+                <th>Indicador de Logro</th>
+                <th>Nivel 5</th>
+                <th>Nivel 4</th>
+                <th>Nivel 3</th>
+                <th>Nivel 2</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr class="">
+                <td scope="row">Item</td>
+                <td>Item</td>
+                <td>Item</td>
+            </tr>
+            <tr class="">
+                <td scope="row">Item</td>
+                <td>Item</td>
+                <td>Item</td>
+            </tr>
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+</div>
+
+
+{% endblock %}
