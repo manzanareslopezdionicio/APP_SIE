@@ -1,7 +1,5 @@
 {% extends 'baseinicio.html' %}
-
 {% block titulo %} Maestros {% endblock %}
-
 {% block contenido %}
 
 <!-- Modal -->
@@ -21,27 +19,21 @@
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="staticBackdropLabel">Agregar datos del Maestro</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            
+
             <form id="formMaestro" action="">
               <div class="row">
                 <div class="form-row col-md-6 ">
                   <div class="form-floating form-floating-custom mb-3">
-                    <input type="text" class="form-control" id="cedulaid" name="cedula" placeholder="" 
+                    <input type="text" class="form-control" id="cedulaid" name="cedula" placeholder="" required
                       autofocus />
                     <label for="floatingInput">Cédula</label>
-                  </div>
-                </div>
-                <div class="form-row col-md-6 ">
-                  <div class="form-floating form-floating-custom mb-3">
-                    <input type="text" class="form-control" id="inss" name="inss" placeholder="" required />
-                    <label for="floatingInput">Número INSS</label>
                   </div>
                 </div>
                 <div class="form-row col-md-6">
@@ -54,12 +46,6 @@
                   <div class="form-floating form-floating-custom mb-3">
                     <input type="text" class="form-control" id="apellido" placeholder="" name="apellido" required />
                     <label for="floatingInput">Apellidos</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating form-floating-custom mb-3">
-                    <input type="text" class="form-control" id="orcid" placeholder="" name="orcid" required />
-                    <label for="floatingInput">Número de ORCID</label>
                   </div>
                 </div>
                 <div class="form-row col-md-6 ">
@@ -86,30 +72,11 @@
                     Seleccione una area válido
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <label for="validationCustom04" class="form-label">Nivel Académico</label>
-                  <select class="form-select" id="nivelA" required>
-                    <option selected disabled value="">Elegir...</option>
-                    <option>Licenciado(a)</option>
-                    <option>Especialista</option>
-                    <option>Master</option>
-                    <option>Doctor(a)</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Seleccione el nivel válido
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-floating form-floating-custom mb-3">
-                    <input type="text" class="form-control" id="lineaI" placeholder="" name="lineaI" required />
-                    <label for="floatingInput">Línea de Investigación</label>
-                  </div>
-                </div>
               </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary btn-round">Guardar</button>
             <button type="button" class="btn btn-danger btn-round" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary btn-round">Guardar</button>
           </div>
           </form>
         </div>
@@ -117,7 +84,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="card">
   <div class="card-header">
@@ -132,37 +98,38 @@
             <th>Nombres</th>
             <th>Apellidos</th>
             <th>Correo Electrónico</th>
+            <th>Teléfono</th>
             <th>Area-Conocimiento</th>
             <th>Estado</th>
           </tr>
         </thead>
         <tfoot>
           <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th>Cédula</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Correo Electrónico</th>
+            <th>Teléfono</th>
+            <th>Area-Conocimiento</th>
+            <th>Estado</th>
           </tr>
         </tfoot>
         <tbody>
           <tr>
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td>$320,800</td>
-          </tr>
-          <tr>
-            <td>Garrett Winters</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td>63</td>
-            <td>2011/07/25</td>
-            <td>$170,750</td>
-          </tr>
+            <td>616-5555555-55</td>
+            <td>Juan</td>
+            <td>Ramirez</td>
+            <td>email@gmail.com</td>
+            <td>5555-5555</td>
+            <td>Economia</td>
+            <td>
+              <a href="#" class="btn btn-primary btn-round btn-sm" role="button">
+                <i class=" fa fa-pencil-alt"></i> Editar
+              </a>
+              <a href="#" class="btn btn-danger btn-round btn-sm" role="button">
+                <i class="fa fa-trash" aria-hidden="true"></i> Borrar
+              </a>
+            </td>
           </tr>
         </tbody>
       </table>
