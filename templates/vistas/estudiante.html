@@ -13,13 +13,14 @@
         <!-- Boton ventana modal alineado a la derecha -->
         <div class="d-flex align-items-center">
             <button type="button" class="btn btn-primary btn-lg btn-round ms-auto shadow" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">
+                data-bs-target="#idestudiante">
                 <i class="fa fa-user-plus"></i>
+    
                 Agregar
             </button>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        <div class="modal fade" id="idestudiante" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered ">
                 <div class="modal-content">
@@ -121,19 +122,16 @@
                         <td>manzanaresdionicio@gmail.com</td>
                         <td>8218-9049</td>
                         <td>
-                            <button class="btn btn-primary " data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            <a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
                                 data-bs-custom-class="custom-tooltip"
-                                data-bs-title="Actualizar los datos del estudiante...">
-                                <a href="#" class="btn btn-primary btn-round btn-sm" role="button">
-                                    <i class=" fa fa-pencil-alt"></i>
-                                </a>
-                            </button>
+                                data-bs-title="Eliminar al estudiante registrado..." class="btn btn-danger btn-sm"
+                                role="button">
+                                <i class="fa fa-trash" aria-hidden="true"></i></a>
 
-
-                            <a href="#" class="btn btn-danger btn-round btn-sm" role="button">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Borrar
-
-                            </a>
+                            <a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="custom-tooltip" data-bs-title="Actualizar estudiane registrado.."
+                                class="btn btn-primary btn-sm" role="button">
+                                <i class="fa fa-pencil-alt"></i></a>
                         </td>
                     </tr>
                 </tbody>
