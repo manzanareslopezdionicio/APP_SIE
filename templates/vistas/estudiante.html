@@ -32,15 +32,15 @@
                             <div class="row">
                                 <div class="form-row col-md-6 ">
                                     <div class="form-floating form-floating-custom mb-3">
-                                        <input type="text" class="form-control" id="carnet" name="carnet"
-                                            placeholder="" required autofocus />
+                                        <input type="text" class="form-control" id="carnet" name="carnet" placeholder=""
+                                            required autofocus />
                                         <label for="floatingInput">Carnet</label>
                                     </div>
                                 </div>
                                 <div class="form-row col-md-6">
                                     <div class="form-floating form-floating-custom mb-3">
-                                        <input type="text" class="form-control" id="nombree" name="nombree" placeholder=""
-                                            required />
+                                        <input type="text" class="form-control" id="nombree" name="nombree"
+                                            placeholder="" required />
                                         <label for="floatingInput">Nombres</label>
                                     </div>
                                 </div>
@@ -121,11 +121,18 @@
                         <td>manzanaresdionicio@gmail.com</td>
                         <td>8218-9049</td>
                         <td>
-                            <a href="#" class="btn btn-primary btn-round btn-sm" role="button">
-                                <i class=" fa fa-pencil-alt"></i> Editar
-                            </a>
+                            <button class="btn btn-primary " data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                data-bs-custom-class="custom-tooltip"
+                                data-bs-title="Actualizar los datos del estudiante...">
+                                <a href="#" class="btn btn-primary btn-round btn-sm" role="button">
+                                    <i class=" fa fa-pencil-alt"></i>
+                                </a>
+                            </button>
+
+
                             <a href="#" class="btn btn-danger btn-round btn-sm" role="button">
                                 <i class="fa fa-trash" aria-hidden="true"></i> Borrar
+
                             </a>
                         </td>
                     </tr>
