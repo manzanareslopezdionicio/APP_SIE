@@ -469,7 +469,15 @@ body[data-background-color="dark"] .demo-icon .icon-class {
 input[type="checkbox"] {
   transform: scale(2);
 }
+.title {
+  --bs-tooltip-bg: var(--bs-primary);
+  --bs-tooltip-color: var(--bs-white);
+}
 
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+  --bs-tooltip-color: var(--bs-white);
+}
 
 @media screen and (max-width: 1200px) {
   #modalShowcase .modal-dialog {

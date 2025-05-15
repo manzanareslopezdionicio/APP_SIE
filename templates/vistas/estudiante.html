@@ -1,6 +1,6 @@
 {% extends 'baseinicio.html' %}
 
-{% block titulo %} SISI {% endblock %}
+{% block titulo %}Estudiante {% endblock %}
 
 {% block contenido %}
 
@@ -12,78 +12,78 @@
     <div class="card-body">
         <!-- Boton ventana modal alineado a la derecha -->
         <div class="d-flex align-items-center">
-            <button type="button" class="btn btn-primary btn-lg btn-round ms-auto shadow" data-bs-toggle="modal"
+            <button type="button" class="btn btn-primary btn-round ms-auto shadow" data-bs-toggle="modal"
                 data-bs-target="#idestudiante">
                 <i class="fa fa-user-plus"></i>
-    
                 Agregar
             </button>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="idestudiante" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered ">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Agregar datos del Maestro</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="formMaestro" action="">
-                            <div class="row">
-                                <div class="form-row col-md-6 ">
-                                    <div class="form-floating form-floating-custom mb-3">
-                                        <input type="text" class="form-control" id="carnet" name="carnet" placeholder=""
-                                            required autofocus />
-                                        <label for="floatingInput">Carnet</label>
-                                    </div>
-                                </div>
-                                <div class="form-row col-md-6">
-                                    <div class="form-floating form-floating-custom mb-3">
-                                        <input type="text" class="form-control" id="nombree" name="nombree"
-                                            placeholder="" required />
-                                        <label for="floatingInput">Nombres</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-custom mb-3">
-                                        <input type="text" class="form-control" id="apellidoe" placeholder=""
-                                            name="apellidoe" required />
-                                        <label for="floatingInput">Apellidos</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-custom mb-3">
-                                        <input type="text" class="form-control" id="cedula" placeholder="" name="cedula"
-                                            required />
-                                        <label for="floatingInput">Número cédula</label>
-                                    </div>
-                                </div>
-                                <div class="form-row col-md-6 ">
-                                    <div class="form-floating form-floating-custom mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="" name="email"
-                                            required />
-                                        <label for="floatingInput">Correo Electrónico</label>
-                                    </div>
-                                </div>
-                                <div class="form-row col-md-6 ">
-                                    <div class="form-floating form-floating-custom mb-3">
-                                        <input type="text" class="form-control" id="tel" placeholder="" name="tel"
-                                            required />
-                                        <label for="floatingInput">Teléfono</label>
-                                    </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="idestudiante" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Agregar datos del Maestro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formMaestro" action="#">
+                        <div class="row">
+                            <div class="form-row col-md-6 ">
+                                <div class="form-floating form-floating-custom mb-3">
+                                    <input type="text" class="form-control" id="carnet" name="carnet" placeholder=""
+                                        required autofocus />
+                                    <label for="floatingInput">Carnet</label>
                                 </div>
                             </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger btn-round" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary btn-round">Guardar</button>
-                    </div>
-                    </form>
+                            <div class="form-row col-md-6">
+                                <div class="form-floating form-floating-custom mb-3">
+                                    <input type="text" class="form-control" id="nombree" name="nombree" placeholder=""
+                                        required />
+                                    <label for="floatingInput">Nombres</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating form-floating-custom mb-3">
+                                    <input type="text" class="form-control" id="apellidoe" placeholder=""
+                                        name="apellidoe" required />
+                                    <label for="floatingInput">Apellidos</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating form-floating-custom mb-3">
+                                    <input type="text" class="form-control" id="cedula" placeholder="" name="cedula"
+                                        required />
+                                    <label for="floatingInput">Número cédula</label>
+                                </div>
+                            </div>
+                            <div class="form-row col-md-6 ">
+                                <div class="form-floating form-floating-custom mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="" name="email"
+                                        required />
+                                    <label for="floatingInput">Correo Electrónico</label>
+                                </div>
+                            </div>
+                            <div class="form-row col-md-6 ">
+                                <div class="form-floating form-floating-custom mb-3">
+                                    <input type="text" class="form-control" id="tel" placeholder="" name="tel"
+                                        required />
+                                    <label for="floatingInput">Teléfono</label>
+                                </div>
+                            </div>
+                        </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-round" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary btn-round">Guardar</button>
+                </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <!--Tabla de listado de estudiantes-->
@@ -122,14 +122,12 @@
                         <td>manzanaresdionicio@gmail.com</td>
                         <td>8218-9049</td>
                         <td>
-                            <a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
-                                data-bs-custom-class="custom-tooltip"
-                                data-bs-title="Eliminar al estudiante registrado..." class="btn btn-danger btn-sm"
-                                role="button">
+                            <a href="#" data-bs-toggle="tooltip" data-bs-title="Eliminar registro estudiante"
+                                data-bs-placement="bottom" data-bs-custom-class="custom-tooltip"
+                                class="btn btn-danger btn-sm" role="button">
                                 <i class="fa fa-trash" aria-hidden="true"></i></a>
-
-                            <a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
-                                data-bs-custom-class="custom-tooltip" data-bs-title="Actualizar estudiane registrado.."
+                            <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                data-bs-custom-class="custom-tooltip" data-bs-title="Actualizar registro estudiane"
                                 class="btn btn-primary btn-sm" role="button">
                                 <i class="fa fa-pencil-alt"></i></a>
                         </td>
@@ -139,5 +137,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock %}
