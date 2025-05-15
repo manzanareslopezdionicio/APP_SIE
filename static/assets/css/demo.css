@@ -470,12 +470,6 @@ input[type="checkbox"] {
   transform: scale(2);
 }
 
-input[type="checkbox"]:checked + label {
-      color: #1c7002; /* Cambia el color del texto del label al marcar */
-      background: #1c7002;
-      color: #fff;
-    }
-
 .custom-tooltip {
   --bs-tooltip-bg: var(--bs-primary);
   --bs-tooltip-color: var(--bs-white);
