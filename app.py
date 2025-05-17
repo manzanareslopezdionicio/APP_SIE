@@ -5,11 +5,11 @@ db = SQLAlchemy()
 
 app = Flask(__name__)
 
-#app.config("SQLALCHEMY_DATABASE_URI") = "postgresql://postgres:@db.mhkcnviednvvvosahgoa.supabase.co:5432/postgres"
+app.config("SQLALCHEMY_DATABASE_URI") = "postgresql://postgres:@db.mhkcnviednvvvosahgoa.supabase.co:5432/postgres"
 
 db.init_app(app)
 
-class SupaUser(db.Model):
+class SupaUser(db.Model):s
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique=True, nullable=False)
     email = db.Column(db.String)
