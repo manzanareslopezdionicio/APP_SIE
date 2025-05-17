@@ -1,9 +1,6 @@
 {% extends 'baseinicio.html' %}
-
-{% block titulo %} SISI {% endblock %}
-
+{% block titulo %}Componentes{% endblock %}
 {% block contenido %}
-
 <!-- Modal -->
 <div class="card">
     <div class="card-header">
@@ -11,20 +8,20 @@
     </div>
     <div class="card-body">
         <!-- Boton ventana modal alineado a la derecha -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center"> 
             <button type="button" class="btn btn-primary btn-round ms-auto shadow" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop">
-           <i class="bi bi-perplexity"></i>
+                <i class="bi bi-perplexity"></i>
                 Agregar
             </button>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Agregar datos del componente</h1>
+                    <div class="modal-header  bg-secondary">
+                        <h1 class="modal-title fs-4 " id="staticBackdropLabel">Agregar registro del componente</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -78,7 +75,7 @@
         <div class="table-responsive">
             <table id="example" class="display table table-striped table-hover ">
                 <thead class="table-primary">
-                    <tr>
+                    <tr class="">
                         <th>Codigo</th>
                         <th>Nombre del componente</th>
                         <th>Estado</th>
@@ -96,11 +93,11 @@
                         <td>20250120</td>
                         <td>Ingenieria en sistema</td>
                         <td>
-                            <a href="#" class="btn btn-primary btn-round btn-sm" role="button">
-                                <i class=" fa fa-pencil-alt"></i> Editar
+                            <a href="#" class="btn btn-danger btn-sm" role="button">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
                             </a>
-                            <a href="#" class="btn btn-danger btn-round btn-sm" role="button">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Borrar
+                            <a href="#" class="btn btn-primary btn-sm" role="button">
+                                <i class=" fa fa-pencil-alt"></i>
                             </a>
                         </td>
                     </tr>
