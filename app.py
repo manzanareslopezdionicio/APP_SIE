@@ -1,5 +1,5 @@
 from flask import Flask, render_template  # type: ignore
-from flask_sqlAlchemy  import SQLAlchemy
+from flask_sqlalchemy  import SQLAlchemy
 
 db = SQLAlchemy()
 
@@ -9,7 +9,7 @@ app.config("SQLALCHEMY_DATABASE_URI") = "postgresql://postgres:@db.mhkcnviednvvv
 
 db.init_app(app)
 
-class SupaUser(db.Model):s
+class SupaUser(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique=True, nullable=False)
     email = db.Column(db.String)
