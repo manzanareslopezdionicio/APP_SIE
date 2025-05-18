@@ -7,6 +7,7 @@ load_dotenv()
 
 url = os.getenv("SUPABASE_URL")
 key = os.getenv("SUPABASE_KEY")
+
 #from flask_sqlalchemy  import SQLAlchemy
 
 #db = SQLAlchemy()
