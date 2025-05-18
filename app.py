@@ -1,7 +1,15 @@
 from flask import Flask, render_template  # type: ignore
-from flask_sqlalchemy  import SQLAlchemy
+from supabase import create_client, Client
+from dotenv import load_dotenv
+import os
 
-db = SQLAlchemy()
+load_dotenv()
+
+url = os.getenv("SUPABASE_URL")
+key = os.getenv("SUPABASE_KEY")
+#from flask_sqlalchemy  import SQLAlchemy
+
+#db = SQLAlchemy()
 
 app = Flask(__name__)
 """
