@@ -25,7 +25,7 @@
         <!--Formulario de Login y registro-->
         <div class="contenedor__login-register">
             <!--Login-->
-            <form action="/" class="formulario__login">
+            <form action="" class="formulario__login">
                 <h2>Iniciar Sesión</h2>
                 <div class="form-floating">
                     <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"
@@ -42,28 +42,25 @@
             </form>
 
             <!--Register-->
-            <form action="" class="formulario__register">
+            <form action="/registrar" class="formulario__register">
                 <h2>Regístrarse</h2>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="name" placeholder="Nombre y apellidos" required>
-                    <label for="name" class="form-label">Nombre completo</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y apellidos" required>
+                    <label for="nombre" class="form-label">Nombre completo</label>
                 </div>
                 <div class="form-floating">
                     <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"
                         required>
                     <label for="email" class="form-label">Correo electrónico</label>
                 </div>
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="name" placeholder="Nombre y apellidos" required>
-                    <label for="name" class="form-label">Usuario</label>
-                </div>
+                
                 <div class="form-floating">
                     <input type="password" class="form-control" name="password" id="password" value=""
                         placeholder="Password" required>
                     <label for="password" class="form-label">Contraseña</label>
                 </div>
 
-                <button class="btn btn-primary">Regístrarse</button>
+                <button type="submit" class="btn btn-primary">Regístrarse</button>
 
             </form>
         </div>

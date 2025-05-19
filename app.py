@@ -11,26 +11,39 @@ key = os.getenv("SUPABASE_KEY")
 supabase: Client = create_client(url, key)
 
 app = Flask(__name__)
+app.secret_key = 'tu_clave_secreta'
 
-@app.rout('/registrar', methods=['GET','POST'])
+
+@app.route('/registrar', methods=['GET','POST'])
 def registrar():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        respuesta = supabase.auth.sign_up({'email':email, 'password':password})
+        nombre = request.form['nombre']
+        
+        #Registrar new user
+        respuesta = supabase.auth.sign_up({'email':email, 'password':password, 'nombre':nombre,})
         if respuesta.get('error'):
             flash('Error al registrar:'+ respuesta['error']['message'],'danger')
+            return redirect(url_for('inicio'))
         else:
             flash('Registro exitoso. Por favor inicia sesión.', 'success')
             return redirect(url_for('login'))
-    return render_template(url_for('login.html'))
+    return render_template('login1.html')
+
 @app.route('/')
 def login():
     return render_template('login1.html')
 
 @app.route('/inicio')
 def inicio():
-    return render_template('/inicio.html')
+    if 'user' in session:
+        return render_template('/inicio.html', user=session['user'])
+    else:
+        return redirect(url_for('login'))
+
+    
+    #return render_template('/inicio.html')
 
 @app.route('/registro')
 def registro():
