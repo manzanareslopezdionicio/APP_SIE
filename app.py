@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash, session   # type: ignore
+from flask import Flask, render_template, request, redirect, url_for, flash, session   # type: ignore
 from supabase import create_client, Client
 from dotenv import load_dotenv
 import os
@@ -12,13 +12,25 @@ supabase: Client = create_client(url, key)
 
 app = Flask(__name__)
 
+@app.rout('/registrar', methods=['GET','POST'])
+def registrar():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        respuesta = supabase.auth.sign_up({'email':email, 'password':password})
+        if respuesta.get('error'):
+            flash('Error al registrar:'+ respuesta['error']['message'],'danger')
+        else:
+            flash('Registro exitoso. Por favor inicia sesión.', 'success')
+            return redirect(url_for('login'))
+    return render_template(url_for('login.html'))
 @app.route('/')
-def inicio():
-    return render_template('inicio.html')
-
-@app.route('/login')
 def login():
     return render_template('login1.html')
+
+@app.route('/inicio')
+def inicio():
+    return render_template('/inicio.html')
 
 @app.route('/registro')
 def registro():
