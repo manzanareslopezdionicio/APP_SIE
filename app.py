@@ -1,4 +1,4 @@
-from flask import Flask, render_template  # type: ignore
+from flask import Flask, render_template, redirect, url_for, flash, session   # type: ignore
 from supabase import create_client, Client
 from dotenv import load_dotenv
 import os
@@ -8,24 +8,10 @@ load_dotenv()
 url = os.getenv("SUPABASE_URL")
 key = os.getenv("SUPABASE_KEY")
 
-#from flask_sqlalchemy  import SQLAlchemy
-
-#db = SQLAlchemy()
+supabase: Client = create_client(url, key)
 
 app = Flask(__name__)
-"""
-app.config("SQLALCHEMY_DATABASE_URI") = "postgresql://postgres:@db.mhkcnviednvvvosahgoa.supabase.co:5432/postgres"
 
-db.init_app(app)
-
-class SupaUser(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String, unique=True, nullable=False)
-    email = db.Column(db.String)
-
-with app.app_context():
-    db.create_all()
-"""
 @app.route('/')
 def inicio():
     return render_template('inicio.html')
@@ -61,6 +47,13 @@ def rubrica():
 @app.route("/grupo")
 def grupo():
     return render_template("/vistas/grupo.html")
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash('Has cerrado sesión', 'info')
+    return redirect(url_for('login'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
