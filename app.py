@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session   # type: ignore
+from flask import Flask, render_template, request, redirect, url_for, flash, session   
 from supabase import create_client, Client
 from dotenv import load_dotenv
 import os
@@ -12,7 +12,6 @@ supabase: Client = create_client(url, key)
 
 app = Flask(__name__)
 app.secret_key = 'tu_clave_secreta'
-
 
 @app.route('/registrar', methods=['GET','POST'])
 def registrar():
@@ -41,13 +40,14 @@ def login():
 
 @app.route('/inicio')
 def inicio():
-    if 'user' in session:
+    return render_template('/inicio.html')
+""" if 'user' in session:
         return render_template('/inicio.html', user=session['user'])
     else:
         return redirect(url_for('login'))
-
+"""
     
-    #return render_template('/inicio.html')
+        
 
 @app.route('/registro')
 def registro():
