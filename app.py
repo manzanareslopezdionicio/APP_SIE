@@ -17,19 +17,23 @@ app.secret_key = 'tu_clave_secreta'
 @app.route('/registrar', methods=['GET','POST'])
 def registrar():
     if request.method == 'POST':
+        data = request.get_json()
         email = request.form['email']
         password = request.form['password']
         nombre = request.form['nombre']
         
         #Registrar new user
-        respuesta = supabase.auth.sign_up({'email':email, 'password':password, 'nombre':nombre,})
-        if respuesta.get('error'):
-            flash('Error al registrar:'+ respuesta['error']['message'],'danger')
-            return redirect(url_for('inicio'))
-        else:
-            flash('Registro exitoso. Por favor inicia sesión.', 'success')
-            return redirect(url_for('login'))
-    return render_template('login1.html')
+        try:
+            respuesta = supabase.from_('login').insert(data).execute()
+            
+            if respuesta.data:
+                flash('Datos insertados correctamente','success')
+                return redirect(url_for('inicio'))
+            else:
+                flash('Error al insetar los datos.', 'error')
+                return redirect(url_for('login'))
+        except Exception as e:
+            return redirect(url_for('registrar'))
 
 @app.route('/')
 def login():
