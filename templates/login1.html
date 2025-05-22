@@ -52,7 +52,7 @@
         <!--Formulario de Login y registro-->
         <div class="contenedor__login-register">
             <!--Login-->
-            <form action="" class="formulario__login">
+            <form action="/login" class="formulario__login" method="POST">
                 <h2>Iniciar Sesión</h2>
                 <div class="form-floating">
                     <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"
@@ -64,12 +64,11 @@
                         placeholder="Password" required>
                     <label for="password" class="form-label">Contraseña</label>
                 </div>
-                <button class="btn btn-primary">Entrar</button>
-
+                <button type="submit" class="btn btn-primary">Entrar</button>
             </form>
 
             <!--Register-->
-            <form action="/registrar" class="formulario__register">
+            <form action="" class="formulario__register" method="post">
                 <h2>Regístrarse</h2>
                 <div class="form-floating">
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y apellidos" required>

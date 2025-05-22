@@ -212,7 +212,7 @@
                       class="avatar-img rounded-circle" />
                   </div>
                   <span class="profile-username">
-                    <span class="op-7">Bienvenidos, </span>
+                    <span class="op-7">Salir, </span>
                     <span class="fw-bold">{{user}}</span>
                   </span>
                 </a>
@@ -251,6 +251,15 @@
         </nav>
         <!-- End Navbar -->
       </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+
 
       <div class="container">
         <div class="page-inner">
