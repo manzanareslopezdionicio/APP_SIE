@@ -41,7 +41,8 @@ def login():
         except Exception as e:
             flash(f'Error en el inicio de sesion: {str(e)}','danger')
     return render_template('login1.html')  
-
+    print(email)
+    
 @app.route('/registro', methods=['GET', 'POST'])
 def registro():
     if request.method == 'POST':

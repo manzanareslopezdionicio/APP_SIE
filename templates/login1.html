@@ -52,7 +52,7 @@
         <!--Formulario de Login y registro-->
         <div class="contenedor__login-register">
             <!--Login-->
-            <form action="/login" class="formulario__login" method="GET">
+            <form action="{{ url_for('login') }}" class="formulario__login" method="post">
                 <h2>Iniciar Sesión</h2>
                 <div class="form-floating">
                     <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"
@@ -71,7 +71,8 @@
             <form action="/registro" class="formulario__register" method="post">
                 <h2>Regístrarse</h2>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y apellidos" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y apellidos"
+                        required>
                     <label for="nombre" class="form-label">Nombre completo</label>
                 </div>
                 <div class="form-floating">
@@ -79,7 +80,7 @@
                         required>
                     <label for="email" class="form-label">Correo electrónico</label>
                 </div>
-                
+
                 <div class="form-floating">
                     <input type="password" class="form-control" name="password" id="password" value=""
                         placeholder="Password" required>
