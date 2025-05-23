@@ -6,24 +6,24 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-
+"""
 app.secret_key = os.getenv('FLASK_SECRET_KEY', 'supersecretkey')
 url = os.getenv("SUPABASE_URL")
 key = os.getenv("SUPABASE_KEY")
 supabase: Client = create_client(url, key)
-
 
 @app.route('/')
 def home():
     if 'user_email' in session:
         return render_template('inicio.html', email=session['user_email'])
     return redirect(url_for('login'))
+"""
 
 
-@app.route('/inicio')
+@app.route('/')
 def inicio():
     return render_template('/inicio.html')
-
+"""
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -69,7 +69,7 @@ def registro():
             flash(f'Error en el registro: {str(e)}', 'danger')
     
     return render_template('login1.html')
-
+"""
 @app.route('/logout')
 def logout():
     session.pop('user_email', None)
