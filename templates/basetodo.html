@@ -3,7 +3,7 @@
 
 <head>
     <title>{% block titulo %} {% endblock %} </title>
-    <link rel="shortcut icon" href="{{url_for('static', filename='img/ICONSIE.ico')}}">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/icosie.ico')}}">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -17,11 +17,6 @@
 </head>
 
 <body>
-    {% block body %}
-
-    {% endblock %}
-
-
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
     {% for category, message in messages %}
@@ -29,7 +24,8 @@
     {% endfor %}
     {% endif %}
     {% endwith %}
-    {% block content %}
+    {% block body %}
+
     {% endblock %}
 
     <footer>
