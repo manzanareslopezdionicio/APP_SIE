@@ -242,14 +242,14 @@
                       <a class="dropdown-item" href="#">Account Setting</a> 
                       <div class="dropdown-divider"></div>-->
                       {% if 'user' in session %}
-                      <span class="navbar-text me-3">{{ session['user']['email'] }}</span>
+                      <span class="navbar-text">{{ session['user']['email'] }}</span>
                       <a class="nav-link" href="{{ url_for('logout') }}">Cerrar sesión</a>
 
                       {% else %}
                       <a class="nav-link" href="{{ url_for('login') }}">Iniciar sesión</a>
                       <a class="nav-link" href="{{ url_for('register') }}">Registrarse</a>
                       {% endif %}
-                      <a class="dropdown-item" href="{{url_for('logout')}}">Cerrar sesión</a>
+
 
 
                     </li>
@@ -391,7 +391,10 @@
   <!--SIE-->
   <script src="{{url_for('static', filename='js/estilodt.js')}}"></script>
   <script src="{{url_for('static', filename='js/estilonivel.js')}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+
+
 </body>
 
 </html>
