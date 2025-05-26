@@ -2,11 +2,9 @@ var form_1 = document.querySelector(".form_1");
 var form_2 = document.querySelector(".form_2");
 var form_3 = document.querySelector(".form_3");
 
-
 var form_1_btns = document.querySelector(".form_1_btns");
 var form_2_btns = document.querySelector(".form_2_btns");
 var form_3_btns = document.querySelector(".form_3_btns");
-
 
 var form_1_next_btn = document.querySelector(".form_1_btns .btn_next");
 var form_2_back_btn = document.querySelector(".form_2_btns .btn_back");
