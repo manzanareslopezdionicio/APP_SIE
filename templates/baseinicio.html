@@ -44,7 +44,7 @@
       <div class="sidebar-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
-          <a href="{{url_for('inicio')}}" class="logo">
+          <a href="#" class="logo">
             <img src="{{url_for('static', filename='img/logo_sie1.png')}}" alt="navbar brand" class="navbar-brand"
               height="20" />
           </a>
@@ -66,7 +66,7 @@
         <div class="sidebar-content">
           <ul class="nav nav-secondary">
             <li class="nav-item active">
-              <a data-bs-toggle="collapse" href="{{url_for('inicio')}}" class="collapsed" aria-expanded="false">
+              <a data-bs-toggle="collapse" href="#" class="collapsed" aria-expanded="false">
                 <i class="fas fa-home"></i>
                 <p>Inicio</p>
               </a>
@@ -226,7 +226,7 @@
                             class="avatar-img rounded" />
                         </div> -->
                         <div class="u-text">
-                         <!-- <h2>Bienvenido, {{ user }}</h2>-->
+                          <!-- <h2>Bienvenido, {{ user }}</h2>-->
                           <h4>xxxxx</h4>
                           <p class="text-muted">hello@example.com</p>
                           <a href="#" class="btn btn-xs btn-secondary btn-sm">Ver Perfil</a>
@@ -241,7 +241,17 @@
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Account Setting</a> 
                       <div class="dropdown-divider"></div>-->
+                      {% if 'user' in session %}
+                      <span class="navbar-text me-3">{{ session['user']['email'] }}</span>
+                      <a class="nav-link" href="{{ url_for('logout') }}">Cerrar sesión</a>
+
+                      {% else %}
+                      <a class="nav-link" href="{{ url_for('login') }}">Iniciar sesión</a>
+                      <a class="nav-link" href="{{ url_for('register') }}">Registrarse</a>
+                      {% endif %}
                       <a class="dropdown-item" href="{{url_for('logout')}}">Cerrar sesión</a>
+
+
                     </li>
                   </div>
                 </ul>
@@ -251,14 +261,26 @@
         </nav>
         <!-- End Navbar -->
       </div>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-        
+
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div id="flash-message" data-category="{{ category }}" data-message="{{ message }}"></div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      {% block content %}
+      {% endblock %}
+
+      <!--   {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %} -->
+
 
 
       <div class="container">
@@ -369,6 +391,7 @@
   <!--SIE-->
   <script src="{{url_for('static', filename='js/estilodt.js')}}"></script>
   <script src="{{url_for('static', filename='js/estilonivel.js')}}"></script>
+  <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
 </body>
 
 </html>

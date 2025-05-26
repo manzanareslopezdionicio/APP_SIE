@@ -20,7 +20,7 @@ var btn_done = document.querySelector(".btn_done");
 var modal_wrapper = document.querySelector(".modal_wrapper");
 var shadow = document.querySelector(".shadow");
 
-form_1_next_btn.addEventListener("click", function(){
+form_1_next_btn.addEventListener("click", function () {
 	form_1.style.display = "none";
 	form_2.style.display = "block";
 
@@ -30,7 +30,7 @@ form_1_next_btn.addEventListener("click", function(){
 	form_2_progessbar.classList.add("active");
 });
 
-form_2_back_btn.addEventListener("click", function(){
+form_2_back_btn.addEventListener("click", function () {
 	form_1.style.display = "block";
 	form_2.style.display = "none";
 
@@ -40,7 +40,7 @@ form_2_back_btn.addEventListener("click", function(){
 	form_2_progessbar.classList.remove("active");
 });
 
-form_2_next_btn.addEventListener("click", function(){
+form_2_next_btn.addEventListener("click", function () {
 	form_2.style.display = "none";
 	form_3.style.display = "block";
 
@@ -50,7 +50,7 @@ form_2_next_btn.addEventListener("click", function(){
 	form_3_progessbar.classList.add("active");
 });
 
-form_3_back_btn.addEventListener("click", function(){
+form_3_back_btn.addEventListener("click", function () {
 	form_2.style.display = "block";
 	form_3.style.display = "none";
 
@@ -60,10 +60,10 @@ form_3_back_btn.addEventListener("click", function(){
 	form_3_progessbar.classList.remove("active");
 });
 
-btn_done.addEventListener("click", function(){
+btn_done.addEventListener("click", function () {
 	modal_wrapper.classList.add("active");
 })
 
-shadow.addEventListener("click", function(){
+shadow.addEventListener("click", function () {
 	modal_wrapper.classList.remove("active");
 })

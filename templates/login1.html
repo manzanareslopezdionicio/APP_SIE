@@ -6,31 +6,7 @@
     rel="stylesheet">
 
 {% block body %}
-{% with messages = get_flashed_messages(with_categories=true) %}
-{% if messages %}
-<ul class=flashes>
-    {% for category, message in messages %}
-    <script type="text/javascript">
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
-        Toast.fire({
-            icon: "success",
-            title: "{{message}}"
-        });
-    </script>
-    {% endfor %}
-</ul>
-{% endif %}
-{% endwith %}
+
 
 
 <link rel="stylesheet" href="{{url_for('static', filename='/css/estilos.css')}}">
@@ -68,12 +44,12 @@
             </form>
 
             <!--Register-->
-            <form action="/registro" class="formulario__register" method="post">
+            <form action="{{url_for('register')}}" class="formulario__register" method="post">
                 <h2>Regístrarse</h2>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y apellidos"
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre"
                         required>
-                    <label for="nombre" class="form-label">Nombre completo</label>
+                    <label for="name" class="form-label">Nombre</label>
                 </div>
                 <div class="form-floating">
                     <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"
