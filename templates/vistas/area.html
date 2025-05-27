@@ -90,8 +90,8 @@
                 <tbody>
                     {% for areas in areas %}
                     <tr>
-                        <td>{{areas.id}}</td>
-                        <td>{{areas.nombre}}</td>
+                        <td>{{areas['id']}}</td>
+                        <td>{{areas['name']}}</td>
                         <td>
                             <a href="#" data-bs-toggle="tooltip" data-bs-title="Eliminar área del conocimiento"
                                 data-bs-placement="bottom" data-bs-custom-class="custom-tooltip"
@@ -102,8 +102,8 @@
                                 class="btn btn-primary btn-sm" role="button">
                                 <i class="fa fa-pencil-alt"></i></a>
                         </td>
-                        {% endfor %}
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

@@ -48,8 +48,8 @@
             <form action="{{url_for('register')}}" class="formulario__register" method="post">
                 <h2>Regístrarse</h2>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre"
-                        required="" pattern="[A-Za-záéíóúÁÉÍÓÚÑñ ]+" autofocus>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required=""
+                        pattern="[A-Za-záéíóúÁÉÍÓÚÑñ ]+" autofocus>
                     <label for="name" class="form-label">Nombre</label>
                 </div>
                 <div class="form-floating">
@@ -57,16 +57,13 @@
                         required>
                     <label for="email" class="form-label">Correo electrónico</label>
                 </div>
-
-                <div class="form-floating">
-                    <input type="password" class="form-control" name="password" id="password" value=""
-                        placeholder="Password" required="" minlength="6">
+               <div class="form-floating">
+                    <input type="password" class="form-control" name="password" id="password1" value=""
+                        placeholder="Password" required>
                     <label for="password" class="form-label">Contraseña</label>
                     <i class="bi bi-eye-slash-fill" id="topass1"></i>
                 </div>
-
                 <button type="submit" class="btn btn-primary">Regístrarse</button>
-
             </form>
         </div>
     </div>

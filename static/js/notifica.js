@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 $(document).ready(function () {
-    $('#topass').on('mouseenter', function () {
+    $('#topass1').on('mouseenter', function () {
         $(this).css('color', 'blue');
     }).on('mouseleave', function () {
         // Si el campo está en modo texto, mantener rojo; si no, negro
-        var passwordField = $('#password');
+        var passwordField = $('#password1');
         if (passwordField.attr('type') === 'text') {
             $(this).css('color', 'red');
         } else {
@@ -48,8 +48,8 @@ $(document).ready(function () {
         }
     });
 
-    $('#topass').click(function () {
-        var passwordField = $('#password');
+    $('#topass1').click(function () {
+        var passwordField = $('#password1');
         var passwordFieldType = passwordField.attr('type');
 
         if (passwordFieldType === 'password') {
@@ -66,7 +66,7 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    $('#topass1').on('mouseenter', function () {
+    $('#topass').on('mouseenter', function () {
         $(this).css('color', 'blue');
     }).on('mouseleave', function () {
         // Si el campo está en modo texto, mantener rojo; si no, negro
@@ -78,7 +78,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#topass1').click(function () {
+    $('#topass').click(function () {
         var passwordField = $('#password');
         var passwordFieldType = passwordField.attr('type');
 

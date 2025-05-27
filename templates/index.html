@@ -26,14 +26,13 @@
                         <tbody>
                             {% for areas in areas %}
                             <tr class="">
-                                <td scope="row">{{ areas.id }}</td>
-                                <td>{{ areas.nombre }}</td>
-                            {% endfor %}
+                                <td scope="row">{{ areas['id'] }}</td>
+                                <td>{{ areas['name'] }}</td>
                             </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
-
                 <button id="test-alert" class="btn btn-primary">Probar SweetAlert</button>
             </div>
         </div>
