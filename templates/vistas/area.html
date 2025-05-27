@@ -27,7 +27,7 @@
                     </div>
                     <div class="modal-body">
                         <!-- Formulario para agregar maestro -->
-                        <form id="formMaestro" action="" method="post">
+                        <form id="formMaestro" action="{{ url_for('create_area') }}" method="post">
                             <div class="row">
                                 <div class="form-row col-md-6 ">
                                     <div class="form-floating form-floating-custom mb-3">
@@ -88,10 +88,10 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    {% for areas in areas %}
+                    {% for area in areas %}
                     <tr>
-                        <td>{{areas['id']}}</td>
-                        <td>{{areas['name']}}</td>
+                        <td>{{ area.id }}</td>
+                        <td>{{ area.name }}</td>
                         <td>
                             <a href="#" data-bs-toggle="tooltip" data-bs-title="Eliminar área del conocimiento"
                                 data-bs-placement="bottom" data-bs-custom-class="custom-tooltip"

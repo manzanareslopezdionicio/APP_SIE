@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 from supabase import create_client, Client
 from config import Config
@@ -10,6 +9,43 @@ app.config.from_object(Config)
 url: str = app.config['SUPABASE_URL']
 key: str = app.config['SUPABASE_KEY']
 supabase: Client = create_client(url, key)
+
+TABLE_NAME = 'area'
+
+# Crear área del conocimiento
+@app.route('/createarea', methods=['GET', 'POST'])
+def create_area():
+    if request.method == 'POST':
+        # Obtener datos del formulario
+        name = request.form['name']
+
+        # Insertar en Supabase
+        data, count = supabase.table('area').insert({
+            "name": name,
+        }).execute()
+
+        flash('Área creada exitosamente!', 'success')
+        return redirect(url_for('area'))
+    
+    return render_template('vistas/area.html')
+
+#consultar área del conocimiento
+@app.route('/consultarea')
+def consult_area():
+    try:
+     # Consultar todos los registros de la tabla area
+        response = supabase.table(TABLE_NAME).select("*").execute()
+        areas = response.data
+        
+        # Verificar si hay datos
+        if not areas:
+            flash('No se encontraron áreas registradas', 'info')
+            
+        return render_template('index.html', areas=areas)
+    
+    except Exception as e:
+        flash(f'Error al consultar las áreas: {str(e)}', 'danger')
+        return render_template('index.html', areas=[])
 
 # ruta para manejar la página de inicio
 @app.route('/')
@@ -74,7 +110,6 @@ def login():
         
         except Exception as e:
             flash(f'Error en el inicio de sesión: {str(e)}', 'error')
-
     return render_template('login1.html')
 
 # Ruta para manejar el cierre de sesión
@@ -87,17 +122,11 @@ def logout():
 # mostrar las vistas de la aplicación
 @app.route('/areas')
 def mostrar_areas():
-    try:
-        response = supabase.table('area').select('*').execute()
-        if response.error:
-            flash(f"Error al obtener datos: {response.error['message']}", "danger")
-            areas = []
-        else:
-            areas = response.data
-    except Exception as e:
-        flash(f"Ocurrió un error: {str(e)}", "danger")
-        areas = []
-    return render_template('area.html', areas=areas)
+    
+    response = supabase.table(area).select("*").execute()
+    areas = response.data
+    return render_template('/vistas/area.html', areas=areas)
+
 
 
 @app.route('/maestro')

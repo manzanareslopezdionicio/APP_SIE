@@ -24,10 +24,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for areas in areas %}
+                            {% for a in areas %}
                             <tr class="">
-                                <td scope="row">{{ areas['id'] }}</td>
-                                <td>{{ areas['name'] }}</td>
+                                <td scope="row">{{a.id }}</td>
+                                <td>{{ a.name }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
