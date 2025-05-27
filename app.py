@@ -85,12 +85,19 @@ def logout():
     return redirect(url_for('login'))
 
 # mostrar las vistas de la aplicación
-@app.route('/area')
-def mostrar_area():
-    response = supabase.table('area').select('*').execute()
-    areas = response.data
-    return render_template('vistas/area.html', areas=areas)
-
+@app.route('/areas')
+def mostrar_areas():
+    try:
+        response = supabase.table('area').select('*').execute()
+        if response.error:
+            flash(f"Error al obtener datos: {response.error['message']}", "danger")
+            areas = []
+        else:
+            areas = response.data
+    except Exception as e:
+        flash(f"Ocurrió un error: {str(e)}", "danger")
+        areas = []
+    return render_template('area.html', areas=areas)
 
 @app.route('/maestro')
 def maestro():

@@ -27,7 +27,7 @@
                     </div>
                     <div class="modal-body">
                         <!-- Formulario para agregar maestro -->
-                        <form id="formMaestro" action="">
+                        <form id="formMaestro" action="" method="post">
                             <div class="row">
                                 <div class="form-row col-md-6 ">
                                     <div class="form-floating form-floating-custom mb-3">
@@ -56,6 +56,15 @@
         </div>
     </div>
 </div>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li style="color: red;">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
 
 <div class="card">
     <div class="card-header">
@@ -66,7 +75,6 @@
             <table id="example" class="display table table-striped table-hover ">
                 <thead class="table-primary">
                     <tr>
-                        <th>Id</th>
                         <th>Código</th>
                         <th>Nombre</th>
                         <th>Estado</th>
@@ -74,18 +82,16 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Id</th>
                         <th>Código</th>
                         <th>Nombre</th>
                         <th>Estado</th>
                     </tr>
                 </tfoot>
                 <tbody>
-                    {% for area in areas %}
+                    {% for areas in areas %}
                     <tr>
-                        <td>{{area.id}}1</td>
-                        <td>{{area.codigoarea}}</td>
-                        <td>{{area.nombre}}</td>
+                        <td>{{areas.id}}</td>
+                        <td>{{areas.nombre}}</td>
                         <td>
                             <a href="#" data-bs-toggle="tooltip" data-bs-title="Eliminar área del conocimiento"
                                 data-bs-placement="bottom" data-bs-custom-class="custom-tooltip"
