@@ -39,6 +39,7 @@
                     <input type="password" class="form-control" name="password" id="password" value=""
                         placeholder="Password" required>
                     <label for="password" class="form-label">Contraseña</label>
+                    <i class="bi bi-eye-slash-fill" id="topass"></i>
                 </div>
                 <button type="submit" class="btn btn-primary">Entrar</button>
             </form>
@@ -48,7 +49,7 @@
                 <h2>Regístrarse</h2>
                 <div class="form-floating">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Nombre"
-                        required>
+                        required="" pattern="[A-Za-záéíóúÁÉÍÓÚÑñ ]+" autofocus>
                     <label for="name" class="form-label">Nombre</label>
                 </div>
                 <div class="form-floating">
@@ -59,8 +60,9 @@
 
                 <div class="form-floating">
                     <input type="password" class="form-control" name="password" id="password" value=""
-                        placeholder="Password" required>
+                        placeholder="Password" required="" minlength="6">
                     <label for="password" class="form-label">Contraseña</label>
+                    <i class="bi bi-eye-slash-fill" id="topass1"></i>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Regístrarse</button>
