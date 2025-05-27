@@ -99,6 +99,7 @@ def mostrar_areas():
         areas = []
     return render_template('area.html', areas=areas)
 
+
 @app.route('/maestro')
 def maestro():
     return render_template('/vistas/maestro.html')
