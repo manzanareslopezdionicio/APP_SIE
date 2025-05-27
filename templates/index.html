@@ -14,9 +14,29 @@
             </div>
             <div class="card-body">
                 <p>Has iniciado sesión correctamente en nuestra aplicación.</p>
+                <div class="table-responsive">
+                    <table class="table table-primary">
+                        <thead>
+                            <tr>
+                                <th scope="col">Column 1</th>
+                                <th scope="col">Column 2</th>
+                                <th scope="col">Column 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for areas in areas %}
+                            <tr class="">
+                                <td scope="row">{{ areas.id }}</td>
+                                <td>{{ areas.nombre }}</td>
+                            {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <button id="test-alert" class="btn btn-primary">Probar SweetAlert</button>
             </div>
         </div>
     </div>
-</div
+</div 
 {% endblock %}
