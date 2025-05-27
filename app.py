@@ -84,6 +84,13 @@ def logout():
     flash('Has cerrado sesión correctamente.', 'info')
     return redirect(url_for('login'))
 
+# mostrar las vistas de la aplicación
+@app.route('/area')
+def mostrar_area():
+    response = supabase.table('area').select('*').execute()
+    areas = response.data
+    return render_template('vistas/area.html', areas=areas)
+
 
 @app.route('/maestro')
 def maestro():
@@ -108,6 +115,10 @@ def rubrica():
 @app.route("/grupo")
 def grupo():
     return render_template("/vistas/grupo.html")
+
+@app.route("/area")
+def area():
+    return render_template("/vistas/area.html")
 
 if __name__ == '__main__':
     app.secret_key = app.config['SECRET_KEY']
