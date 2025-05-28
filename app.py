@@ -77,7 +77,7 @@ def login():
         try:
             user = supabase.auth.sign_up({
                 "email": email,
-                "password": password,
+                "password": password
             })
             
             if user:
