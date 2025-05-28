@@ -10,8 +10,6 @@ url: str = app.config['SUPABASE_URL']
 key: str = app.config['SUPABASE_KEY']
 supabase: Client = create_client(url, key)
 
-TABLE_NAME = 'area'
-
 # Crear área del conocimiento
 @app.route('/createarea', methods=['GET', 'POST'])
 def create_area():
@@ -28,24 +26,6 @@ def create_area():
         return redirect(url_for('area'))
     
     return render_template('vistas/area.html')
-
-#consultar área del conocimiento
-@app.route('/consultarea')
-def consult_area():
-    try:
-     # Consultar todos los registros de la tabla area
-        response = supabase.table(TABLE_NAME).select("*").execute()
-        areas = response.data
-        
-        # Verificar si hay datos
-        if not areas:
-            flash('No se encontraron áreas registradas', 'info')
-            
-        return render_template('index.html', areas=areas)
-    
-    except Exception as e:
-        flash(f'Error al consultar las áreas: {str(e)}', 'danger')
-        return render_template('index.html', areas=[])
 
 # ruta para manejar la página de inicio
 @app.route('/')
@@ -74,7 +54,7 @@ def register():
             response = supabase.table('login').insert({
                 "email": email,
                 "password": password,
-                "nombre": name,
+                "nombre": name
                 # Almacenar la contraseña de forma segura
                 # No almacenar contraseñas en texto plano en producción
                 # Usar Supabase Auth para manejar autenticación
