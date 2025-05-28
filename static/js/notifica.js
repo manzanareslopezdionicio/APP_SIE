@@ -64,7 +64,6 @@ $(document).ready(function () {
     });
 });
 
-
 $(document).ready(function () {
     $('#topass').on('mouseenter', function () {
         $(this).css('color', 'blue');
@@ -94,24 +93,3 @@ $(document).ready(function () {
     });
 });
 
-
-/* 
-$(document).ready(function () {
-    $('#topass').click(function () {
-        var passwordField = $('#password');
-        var passwordFieldType = passwordField.attr('type');
-
-        // Cambia el color a rojo al hacer clic
-
-        if (passwordFieldType === 'password') {
-            passwordField.attr('type', 'text');
-            $(this).removeClass('bi-eye-slash-fill').addClass('bi-eye-fill');
-            $(this).css('color', 'red');
-        } else {
-            passwordField.attr('type', 'password');
-            $(this).removeClass('bi-eye-fill').addClass('bi-eye-slash-fill');
-            $(this).css('color', 'black');
-        }
-    });
-});
- */
