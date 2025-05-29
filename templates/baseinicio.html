@@ -210,20 +210,17 @@
           <div class="container-fluid">
 
             <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
-              {% if 'user' in session %}
-              <span class="navbar-text text-light">{{ session['user']['email'] }}</span>
-              <a class="nav-link btn btn-info btn-rounded" href="{{ url_for('logout') }}"> Cerrar sesión</a>
-              {% else %}
-              <a class="nav-link" href="{{ url_for('login1') }}">Iniciar sesión</a>
-              <a class="nav-link" href="{{ url_for('register') }}">Registrarse</a>
-              {% endif %}
+
+              
+              <span class="navbar-text me-3">Hola, {{ session.user_name }}</span>
+              <a class="btn btn-outline-danger" href="{{ url_for('logout') }}">Cerrar Sesión</a>
 
             </ul>
           </div>
         </nav>
         <!-- End Navbar -->
       </div>
-
+      <!-- 
       {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
       {% for category, message in messages %}
@@ -231,7 +228,7 @@
       {% endfor %}
       {% endif %}
       {% endwith %}
-
+ -->
       <div class="container">
         <div class="page-inner">
           <!-- <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"> -->

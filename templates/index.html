@@ -10,7 +10,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h3>Bienvenido, {{ user.email }}</h3>
+              
             </div>
             <div class="card-body">
                 <p>Has iniciado sesión correctamente en nuestra aplicación.</p>
@@ -18,16 +18,19 @@
                     <table class="table table-primary">
                         <thead>
                             <tr>
-                                <th scope="col">Column 1</th>
-                                <th scope="col">Column 2</th>
-                                <th scope="col">Column 3</th>
+                                <th>N°.</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Fecha de Registro</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for a in areas %}
-                            <tr class="">
-                                <td scope="row">{{a.id }}</td>
-                                <td>{{ a.name }}</td>
+                            {% for user in users %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ user[1] }}</td>
+                                <td>{{ user[2] }}</td>
+                                <td>{{ user[3] }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -37,5 +40,4 @@
             </div>
         </div>
     </div>
-</div 
-{% endblock %}
+</div {% endblock %}
