@@ -133,7 +133,6 @@ def users():
     
     return render_template('index.html', users=users)
 
-#
 # Ruta para manejar el cierre de sesión
 @app.route('/logout')
 def logout():
