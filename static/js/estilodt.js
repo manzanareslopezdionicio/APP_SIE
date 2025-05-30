@@ -6,8 +6,8 @@ $(document).ready(function () {
 
     lengthMenu: [5, 10, 25, 50],
     columnDefs: [
-      { orderable: false, targets: [3, 4, 5] },
-      { searchable: false, targets: [1, 2, 3, 4, 5] },
+      { orderable: false, targets: [0, 2, 4, 5] },
+      { searchable: false, targets: [3, 4] },
     ],
     language: {
       processing: 'Procesando...',
@@ -245,6 +245,40 @@ $(document).ready(function () {
     },
   });
 });
+
+
+$(document).ready(function () {
+  $('#example1').DataTable({
+    responsive: true,
+
+    lengthMenu: [5, 10, 25, 50],
+    columnDefs: [
+      { orderable: false, targets: [ 2, ] },
+      { searchable: false, targets: [3, 4] },
+    ],
+    language: {
+      processing: 'Procesando...',
+      lengthMenu: 'Mostrar _MENU_ registros',
+      zeroRecords: 'No se encontraron resultados',
+      emptyTable: 'Ningún dato disponible en esta tabla',
+      infoEmpty: 'Mostrando registros del 0 al 0 de un total de 0 registros',
+      infoFiltered: '(filtrado de un total de _MAX_ registros)',
+      search: 'Buscar:',
+      infoThousands: ',',
+      loadingRecords: 'Cargando...',
+      paginate: {
+        first: 'Primero',
+        last: 'Último',
+        next: 'Siguiente',
+        previous: 'Anterior',
+      },
+      aria: {
+        sortAscending: ': Activar para ordenar la columna de manera ascendente',
+        sortDescending: ': Activar para ordenar la columna de manera descendente',
+      },
+    },
+  },);
+},);
 
 //Validaciones
 const formMaestro = document.getElementById('formMaestro')

@@ -36,6 +36,24 @@ def create_users_table():
 
 create_users_table()
 
+def create_area_table():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS areas (
+            id SERIAL PRIMARY KEY,
+            nombre VARCHAR(100) NOT NULL,
+            descripcion VARCHAR(100) NOT NULL,
+            fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    conn.commit()
+    cur.close()
+    conn.close()
+
+create_area_table()
+
+
 def hash_password(password):
     # Generar un salt y hash la contraseña
     salt = bcrypt.gensalt()
@@ -133,7 +151,27 @@ def users():
     
     return render_template('index.html', users=users)
 
-#
+# LISTA de areas del conocimiento
+@app.route('/areas')
+def ver_area():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+    
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    try:
+        cur.execute("SELECT id, nombre, descripcion FROM areas ORDER BY nombre")
+        areas = cur.fetchall()
+    except Exception as e:
+        flash('Error al obtener áreas: ' + str(e), 'danger')
+        areas = []
+    finally:
+        cur.close()
+        conn.close()
+    
+    return render_template('/vistas/area.html', areas=areas)
+
 # Ruta para manejar el cierre de sesión
 @app.route('/logout')
 def logout():
@@ -141,7 +179,28 @@ def logout():
     flash('Has cerrado sesión correctamente.', 'info')
     return redirect(url_for('login'))
 
-# mostrar las vistas de la aplicación
+# Agregar areas del conocimiento
+@app.route('/crear_area', methods=['GET', 'POST'])
+def crear_area():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        descripcion = request.form['descripcion']
+        
+        conn = get_db_connection()
+        cur = conn.cursor()
+        
+        try:
+            cur.execute("INSERT INTO areas (nombre, descripcion) VALUES (%s, %s)", (nombre, descripcion))
+            conn.commit()
+            flash('Área creada exitosamente!', 'success')
+            return redirect(url_for('crear_area'))
+        except Exception as e:
+            flash('Error al crear área: ' + str(e), 'danger')
+        finally:
+            cur.close()
+            conn.close()
+    
+    return render_template('/vistas/area.html')
 
 
 @app.route('/maestro')
@@ -168,9 +227,7 @@ def rubrica():
 def grupo():
     return render_template("/vistas/grupo.html")
 
-@app.route("/area")
-def area():
-    return render_template("/vistas/area.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

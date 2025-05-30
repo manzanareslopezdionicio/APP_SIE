@@ -1,5 +1,6 @@
 {% extends 'baseinicio.html' %}
-{% block titulo %} Maestros {% endblock %}
+{% block titulo %} Area {% endblock %}
+
 {% block contenido %}
 
 <!-- Modal -->
@@ -10,7 +11,7 @@
     <div class="card-body">
         <!-- Boton ventana modal alineado a la derecha -->
         <div class="d-flex align-items-center">
-            <button type="button" class="btn btn-primary btn-lg btn-round ms-auto shadow" data-bs-toggle="modal"
+            <button type="button" class="btn btn-primary btn-round ms-auto shadow" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop">
                 <i class="fa fa-user-plus"></i>
                 Agregar
@@ -27,23 +28,22 @@
                     </div>
                     <div class="modal-body">
                         <!-- Formulario para agregar maestro -->
-                        <form id="formMaestro" action="{{ url_for('create_area') }}" method="post">
+                        <form id="formMaestro" action="{{ url_for('crear_area') }}" method="post">
                             <div class="row">
                                 <div class="form-row col-md-6 ">
                                     <div class="form-floating form-floating-custom mb-3">
-                                        <input type="text" class="form-control" id="codigoarea" name="codigoarea"
+                                        <input type="text" class="form-control" id="codigoarea" name="nombre"
                                             placeholder="" required autofocus />
-                                        <label for="floatingInput">Codigo del Área</label>
+                                        <label for="floatingInput">Nombre del Área</label>
                                     </div>
                                 </div>
                                 <div class="form-row col-md-6">
                                     <div class="form-floating form-floating-custom mb-3">
-                                        <input type="text" class="form-control" id="name" placeholder="" name="name"
-                                            required />
-                                        <label for="floatingInput">Nombre del área</label>
+                                        <input type="text" class="form-control" id="name" placeholder=""
+                                            name="descripcion" required />
+                                        <label for="floatingInput">Descripción del área</label>
                                     </div>
                                 </div>
-
                             </div>
                     </div>
                     <div class="modal-footer">
@@ -56,15 +56,7 @@
         </div>
     </div>
 </div>
-  {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <ul>
-          {% for category, message in messages %}
-            <li style="color: red;">{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+<!-- Tabla de listado de área -->
 
 <div class="card">
     <div class="card-header">
@@ -75,32 +67,31 @@
             <table id="example" class="display table table-striped table-hover ">
                 <thead class="table-primary">
                     <tr>
-                        <th>Código</th>
-                        <th>Nombre</th>
+                        <th>Id</th>
+                        <th>Nombres</th>
+                        <th>Descripción</th>
                         <th>Estado</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Código</th>
-                        <th>Nombre</th>
+                        <th>Id</th>
+                        <th>Nombres</th>
+                        <th>Descripción</th>
                         <th>Estado</th>
                     </tr>
                 </tfoot>
                 <tbody>
                     {% for area in areas %}
                     <tr>
-                        <td>{{ area.id }}</td>
-                        <td>{{ area.name }}</td>
+                        <td>{{ area[loop.index] }}</td>
+                        <td>{{ area[0] }}</td>
+                        <td>{{ area[1] }}</td>
                         <td>
-                            <a href="#" data-bs-toggle="tooltip" data-bs-title="Eliminar área del conocimiento"
-                                data-bs-placement="bottom" data-bs-custom-class="custom-tooltip"
-                                class="btn btn-danger btn-sm" role="button">
+                            <a href="#" class="btn btn-primary btn-sm" role="button">
+                                <i class=" fa fa-pencil-alt"></i></a>
+                            <a href="#" class="btn btn-danger btn-sm" role="button">
                                 <i class="fa fa-trash" aria-hidden="true"></i></a>
-                            <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                data-bs-custom-class="custom-tooltip" data-bs-title="Actualizar área del conocimiento"
-                                class="btn btn-primary btn-sm" role="button">
-                                <i class="fa fa-pencil-alt"></i></a>
                         </td>
                     </tr>
                     {% endfor %}

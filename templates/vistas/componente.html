@@ -65,45 +65,56 @@
         </div>
     </div>
 </div>
-
-<!--Tabla de listado de carrera-->
+<!-- Tabla de listado de componentes -->
+ 
 <div class="card">
-    <div class="card-header">
-        <h4 class="card-title">Agregar datos del componente</h4>
+  <div class="card-header">
+    <h4 class="card-title">Registro de Maestros</h4>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table id="example" class="display table table-striped table-hover ">
+        <thead class="table-primary">
+          <tr>
+            <th>Cédula</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Dpto</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Cédula</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Dpto</th>
+            <th>Estado</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>616-5555555-55</td>
+            <td>Juan</td>
+            <td>Ramirez</td>
+            <td>email@gmail.com</td>
+            <td>5555-5555</td>
+            <td>Economia</td>
+            <td>
+              <a href="#" class="btn btn-primary btn-sm" role="button">
+                <i class=" fa fa-pencil-alt"></i></a>
+              <a href="#" class="btn btn-danger btn-sm" role="button">
+                <i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table id="example" class="display table table-striped table-hover ">
-                <thead class="table-primary">
-                    <tr class="">
-                        <th>Codigo</th>
-                        <th>Nombre del componente</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Codigo</th>
-                        <th>Nombre del componente</th>
-                        <th>Estado</th>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    <tr>
-                        <td>20250120</td>
-                        <td>Ingenieria en sistema</td>
-                        <td>
-                            <a href="#" class="btn btn-danger btn-sm" role="button">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                            </a>
-                            <a href="#" class="btn btn-primary btn-sm" role="button">
-                                <i class=" fa fa-pencil-alt"></i>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+  </div>
 </div>
+
 {% endblock %}
