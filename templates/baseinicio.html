@@ -107,7 +107,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="{{url_for('ver_area')}}">
+                    <a href="#">
                       <span class="sub-item">Área</span>
                     </a>
                   <li>
@@ -219,15 +219,7 @@
         </nav>
         <!-- End Navbar -->
       </div>
-      <!-- 
-      {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-      {% for category, message in messages %}
-      <div class="alert alert-{{ category }}">{{ message }}</div>
-      {% endfor %}
-      {% endif %}
-      {% endwith %}
- -->
+
       <div class="container">
         <div class="page-inner">
           <!-- <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"> -->
@@ -240,7 +232,9 @@
       {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
       {% for category, message in messages %}
-      <div id="flash-message" data-category="{{ category }}" data-message="{{ message }}"></div>
+      <div id="flash-message" data-category="{{ category }}" data-message="{{ message }}">
+
+      </div>
       {% endfor %}
       {% endif %}
       {% endwith %}
@@ -268,16 +262,15 @@
   <script src="{{url_for('static', filename='assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
   <!-- jQuery Sparkline -->
   <script src="{{url_for('static', filename='assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
-  <!-- Chart Circle -->
-  <script src="{{url_for('static', filename='assets/js/plugin/chart-circle/circles.min.js')}}"></script>
+
   <!-- Datatables -->
   <script src="{{url_for('static', filename='assets/js/plugin/datatables/datatables.min.js')}}"></script>
   <!-- Bootstrap Notify-->
   <script src="{{url_for('static', filename='assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
   <!-- Sweet Alert -->
-  <!-- <script src="{{url_for('static', filename='assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script> -->
+  <script src="{{url_for('static', filename='assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
   <!-- Kaiadmin JS -->
   <script src="{{url_for('static', filename='assets/js/kaiadmin.min.js')}}"></script>
   <!-- Kaiadmin -->
